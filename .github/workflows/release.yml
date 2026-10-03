@@ -41,6 +41,7 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm format:check
       - run: pnpm test:unit
+      - run: pnpm test:int
       - run: pnpm build
 
       - name: Resolve changelog config and range

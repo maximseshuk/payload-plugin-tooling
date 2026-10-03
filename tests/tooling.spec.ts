@@ -1,32 +1,10 @@
 import { resolve } from 'node:path'
 
 import type { Rolldown } from 'tsdown'
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
-import { testDatabase } from '@/testDatabase.ts'
 import { pluginBuild } from '@/tsdown.ts'
 import { vitestBase } from '@/vitest.ts'
-
-afterEach(() => {
-  vi.unstubAllEnvs()
-})
-
-describe('testDatabase', () => {
-  it('returns the SQLite adapter by default', async () => {
-    vi.stubEnv('TEST_DB', undefined)
-    expect((await testDatabase()).name).toBe('sqlite')
-  })
-
-  it('returns the Postgres adapter on PGlite', async () => {
-    vi.stubEnv('TEST_DB', 'postgres')
-    expect((await testDatabase()).name).toBe('postgres')
-  })
-
-  it('throws when TEST_DB is unknown', async () => {
-    vi.stubEnv('TEST_DB', 'mysql')
-    await expect(testDatabase()).rejects.toThrow('Unknown TEST_DB "mysql"')
-  })
-})
 
 describe('pluginBuild', () => {
   it('copies CSS and the extra globs without flattening', () => {

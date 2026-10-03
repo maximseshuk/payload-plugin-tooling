@@ -117,7 +117,7 @@ config.onInit = async (payload) => {
 
 ## GitHub workflows
 
-Both workflows run the scripts `lint`, `format:check`, `typecheck`, `test:unit` and `build`. Every plugin must define them.
+Both workflows run the scripts `lint`, `format:check`, `typecheck`, `test:unit`, `test:int` and `build`. Every plugin must define them. `test:unit` runs tests without a database or network; `test:int` runs the database tests.
 
 ```yaml
 # .github/workflows/ci.yml

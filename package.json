@@ -69,7 +69,8 @@
     "format:check": "oxfmt --check",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
-    "test:unit": "vitest run",
+    "test:int": "vitest run int.spec",
+    "test:unit": "vitest run --exclude '**/*.int.spec.ts'",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

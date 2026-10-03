@@ -13,10 +13,11 @@ pnpm typecheck
 pnpm lint
 pnpm format        # format:check to verify
 pnpm test:unit
+pnpm test:int    # tests/*.int.spec.ts: they start databases
 pnpm build         # tsdown -> dist/
 ```
 
-Before every commit: `pnpm typecheck && pnpm lint && pnpm format && pnpm test:unit`.
+Before every commit: `pnpm typecheck && pnpm lint && pnpm format && pnpm test:unit && pnpm test:int`.
 
 ## Structure
 
