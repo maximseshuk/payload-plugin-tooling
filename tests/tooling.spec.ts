@@ -17,7 +17,23 @@ describe('pluginBuild', () => {
   it('keeps every bare import external and bundles relative and alias imports', () => {
     const neverBundle = pluginBuild().deps?.neverBundle as (id: string) => boolean
     expect(['payload', '@payloadcms/ui', 'node:fs', './styles.css'].map(neverBundle)).toEqual([true, true, true, true])
-    expect(['./index.js', '@/shared/http.js'].map(neverBundle)).toEqual([false, false])
+    expect(['./index.js', '@/shared/http.js', '@/client/Panel/Panel.css'].map(neverBundle)).toEqual([
+      false,
+      false,
+      false,
+    ])
+  })
+
+  it('keeps an aliased CSS import external, relative to the importer', () => {
+    const [plugin] = pluginBuild().plugins as unknown as [{ resolveId: (id: string, importer?: string) => unknown }]
+    const importer = resolve('src/client/Fields.tsx')
+    expect(plugin.resolveId('@/client/Panel/Panel.css', importer)).toEqual({
+      external: true,
+      id: './Panel/Panel.css',
+    })
+    expect(plugin.resolveId('@/rsc/Widget.css', importer)).toEqual({ external: true, id: '../rsc/Widget.css' })
+    expect(plugin.resolveId('@/client/Panel/Panel.js', importer)).toBeNull()
+    expect(plugin.resolveId('./Panel.css', importer)).toBeNull()
   })
 
   it('bundles the tooling package and its subpaths', () => {

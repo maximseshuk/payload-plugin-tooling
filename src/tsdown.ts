@@ -1,13 +1,25 @@
-import type { UserConfig } from 'tsdown'
+import { dirname, relative, resolve } from 'node:path'
+
+import type { Rolldown, UserConfig } from 'tsdown'
 
 export type PluginBuildOptions = {
   copy?: string[]
 }
 
+const aliasedCss: Rolldown.Plugin = {
+  name: 'aliased-css',
+  resolveId: (id, importer) => {
+    if (!importer || !id.startsWith('@/') || !id.endsWith('.css')) return null
+    const path = relative(dirname(importer), resolve('src', id.slice(2)))
+    return { external: true, id: path.startsWith('.') ? path : `./${path}` }
+  },
+}
+
 export const pluginBuild = ({ copy = [] }: PluginBuildOptions = {}): UserConfig => ({
   copy: ['src/**/*.css', ...copy].map((from) => ({ flatten: false, from, to: 'dist' })),
   deps: {
-    neverBundle: (id) => id.endsWith('.css') || /^(?![./]|@\/|\0|@seshuk\/payload-plugin-tooling(?:\/|$))/.test(id),
+    neverBundle: (id) =>
+      !id.startsWith('@/') && (id.endsWith('.css') || /^(?![./]|\0|@seshuk\/payload-plugin-tooling(?:\/|$))/.test(id)),
     onlyBundle: ['@seshuk/payload-plugin-tooling'],
   },
   dts: true,
@@ -27,6 +39,7 @@ export const pluginBuild = ({ copy = [] }: PluginBuildOptions = {}): UserConfig 
     },
   }),
   platform: 'node',
+  plugins: [aliasedCss],
   sourcemap: true,
   target: 'esnext',
   tsconfig: './tsconfig.build.json',
