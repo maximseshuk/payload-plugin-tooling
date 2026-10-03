@@ -1,0 +1,7 @@
+{
+  "name": "payload-plugin",
+  "description": "Format and lint hook and release skill for the @seshuk Payload plugins",
+  "author": {
+    "name": "Maxim Seshuk"
+  }
+}

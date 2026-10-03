@@ -1,0 +1,170 @@
+# @seshuk/payload-plugin-tooling
+
+Shared dev config for the `@seshuk` Payload plugins: lint, format, TypeScript, build, test database, changelog and GitHub workflows. Install it as a dev dependency only. Plugins never import it at runtime.
+
+```bash
+pnpm add -D @seshuk/payload-plugin-tooling
+```
+
+## oxlint
+
+```ts
+// oxlint.config.ts
+import { oxlintBase } from '@seshuk/payload-plugin-tooling/oxlint'
+import { defineConfig } from 'oxlint'
+
+export default defineConfig({
+  ...oxlintBase,
+  overrides: [...oxlintBase.overrides /* plugin rules */],
+})
+```
+
+## oxfmt
+
+```ts
+// oxfmt.config.ts
+import { oxfmtBase } from '@seshuk/payload-plugin-tooling/oxfmt'
+import { defineConfig } from 'oxfmt'
+
+export default defineConfig(oxfmtBase)
+```
+
+## TypeScript
+
+```jsonc
+// tsconfig.json
+{
+  "extends": "@seshuk/payload-plugin-tooling/tsconfig.json",
+  "compilerOptions": { "rootDir": "./", "paths": { "@/*": ["./src/*"] } },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./tests/**/*.ts"],
+}
+```
+
+The build reads `tsconfig.build.json`, which extends `tsconfig.json` and sets `rootDir: ./src`, `outDir: ./dist` and `jsx: react-jsx`.
+
+## tsdown
+
+```ts
+// tsdown.config.ts
+import { pluginBuild } from '@seshuk/payload-plugin-tooling/tsdown'
+import { defineConfig } from 'tsdown'
+
+export default defineConfig(pluginBuild())
+```
+
+The build keeps the `src` file layout in `dist`, copies `src/**/*.css` and never bundles npm packages. Pass `copy` for more files, for example `pluginBuild({ copy: ['src/**/*.edge.js'] })`.
+
+## Test database
+
+```ts
+import { testDatabase } from '@seshuk/payload-plugin-tooling/test-database'
+
+export default buildConfig({ db: await testDatabase() /* … */ })
+```
+
+`TEST_DB` picks an in-memory database: `sqlite` (default), `postgres` (PGlite) or `mongodb` (mongodb-memory-server). Install only the packages for the databases you test:
+
+| `TEST_DB`  | Packages                                                                         |
+| ---------- | -------------------------------------------------------------------------------- |
+| `sqlite`   | `@payloadcms/db-sqlite`                                                          |
+| `postgres` | `@payloadcms/db-postgres`, `@electric-sql/pglite`, `@electric-sql/pglite-socket` |
+| `mongodb`  | `@payloadcms/db-mongodb`, `mongodb-memory-server`                                |
+
+## GitHub workflows
+
+Both workflows run the scripts `lint`, `format:check`, `typecheck`, `test:unit` and `build`. Every plugin must define them.
+
+```yaml
+# .github/workflows/ci.yml
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  ci:
+    uses: maximseshuk/payload-plugin-tooling/.github/workflows/ci.yml@v0.1.0
+    with:
+      node-versions: '["24"]'
+```
+
+```yaml
+# .github/workflows/release.yml
+name: Release
+on:
+  push:
+    tags: ['v*.*.*']
+permissions:
+  contents: read
+jobs:
+  release:
+    uses: maximseshuk/payload-plugin-tooling/.github/workflows/release.yml@v0.1.0
+    permissions:
+      contents: write
+      id-token: write
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+```
+
+The release workflow:
+
+- builds the changelog with git-cliff from the plugin's `cliff.toml`, or from the shared one in this package when the plugin has none;
+- puts `.github/releases/vX.Y.Z.md` above the changelog when the file exists;
+- sets the npm dist-tag: `beta` for `X.Y.Z-beta.N`, `latest` for the newest major, `latest-N` for an older major;
+- publishes with npm trusted publishing (OIDC), or with the `NPM_TOKEN` secret for the first release of a new package.
+
+### Release notes
+
+To add text above the generated changelog, such as a short intro or breaking changes, commit `.github/releases/vX.Y.Z.md` with the release. Keep it to a few lines and link to the upgrade guide in the docs for the details.
+
+```markdown
+<!-- .github/releases/v4.0.0.md -->
+
+Payload 4 support. Upgrade guide: https://example.com/v4/upgrade-guide
+
+## ⚠️ Breaking changes
+
+- Node.js 24.15+ is required.
+```
+
+The file is optional, except for a new major (`vX.0.0`) and its first prerelease (`vX.0.0-beta.1`). Without it, those releases fail before anything is published.
+
+### npm trusted publishing
+
+npm can add a trusted publisher only to a package that already exists. For a new package:
+
+1. Add an npm granular access token with publish rights as the `NPM_TOKEN` repository secret.
+2. Push the first release tag. The workflow publishes with the token.
+3. On npmjs.com, add a trusted publisher to the package: the plugin repository and the workflow file `release.yml` (the caller, not the file in this repository).
+4. Delete the `NPM_TOKEN` secret and revoke the token. Later releases use OIDC.
+
+## Editor settings
+
+`.zed/settings.json` and `.vscode/` in this repository are the reference editor settings. Copy them to each plugin: editors cannot read settings from a package. They format with oxfmt on save, fix oxlint issues and use the TypeScript 7 language server.
+
+- Zed: install the extensions `Oxc` and `TypeScript Language Server`.
+- VS Code: install the recommended extensions from `.vscode/extensions.json`.
+
+## Claude Code settings
+
+`.claude/settings.json` is the reference project settings for Claude Code. Copy it to each plugin and add the plugin's own entries, such as MCP servers. It:
+
+- allows read-only git and GitHub commands and the package scripts without a prompt;
+- always asks before a push, a tag, a pull request, a release, a publish or a `gh api` call, also in auto mode;
+- blocks reading `.env` files;
+- turns off co-author lines in commits and pull requests;
+- enables the official `payload` plugin and the `payload-plugin` plugin from this repository.
+
+### The `payload-plugin` plugin
+
+This repository is also a Claude Code plugin marketplace (`.claude-plugin/marketplace.json`). The plugin in `claude/` has:
+
+- a hook that runs `oxlint --fix` and `oxfmt` on every file Claude edits, and shows the remaining lint errors to Claude. It needs `jq`;
+- the `/payload-plugin:release` skill, which prepares a release: version, release notes, checks, release commit and tag. It never pushes.
+
+Plugins get changes to the hook and the skill without copying files.
+
+## License
+
+MIT

@@ -1,0 +1,139 @@
+{
+  "name": "@seshuk/payload-plugin-tooling",
+  "version": "0.1.0",
+  "description": "Shared lint, format, TypeScript, build and test config for @seshuk Payload plugins",
+  "keywords": [
+    "payload",
+    "payload-plugin",
+    "tooling"
+  ],
+  "license": "MIT",
+  "author": "Maxim Seshuk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximseshuk/payload-plugin-tooling.git"
+  },
+  "funding": {
+    "type": "ko-fi",
+    "url": "https://ko-fi.com/seshuk"
+  },
+  "files": [
+    "dist",
+    "cliff.toml",
+    "tsconfig.base.json"
+  ],
+  "type": "module",
+  "exports": {
+    "./oxlint": "./src/oxlint.ts",
+    "./oxfmt": "./src/oxfmt.ts",
+    "./tsdown": "./src/tsdown.ts",
+    "./test-database": "./src/testDatabase.ts",
+    "./tsconfig.json": "./tsconfig.base.json",
+    "./cliff.toml": "./cliff.toml"
+  },
+  "publishConfig": {
+    "exports": {
+      "./oxlint": {
+        "types": "./dist/oxlint.d.ts",
+        "default": "./dist/oxlint.js"
+      },
+      "./oxfmt": {
+        "types": "./dist/oxfmt.d.ts",
+        "default": "./dist/oxfmt.js"
+      },
+      "./tsdown": {
+        "types": "./dist/tsdown.d.ts",
+        "default": "./dist/tsdown.js"
+      },
+      "./test-database": {
+        "types": "./dist/testDatabase.d.ts",
+        "default": "./dist/testDatabase.js"
+      },
+      "./tsconfig.json": "./tsconfig.base.json",
+      "./cliff.toml": "./cliff.toml"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "test:unit": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@electric-sql/pglite-socket": "0.2.11",
+    "@payloadcms/db-mongodb": "4.0.0-canary.37",
+    "@payloadcms/db-postgres": "4.0.0-canary.37",
+    "@payloadcms/db-sqlite": "4.0.0-canary.37",
+    "@types/node": "^26.6.4",
+    "mongodb-memory-server": "^11.3.0",
+    "oxfmt": "^0.71.0",
+    "oxlint": "^1.86.0",
+    "payload": "4.0.0-canary.37",
+    "tsdown": "^0.23.0",
+    "typescript": "7.0.2",
+    "vitest": "^5.0.3"
+  },
+  "peerDependencies": {
+    "@electric-sql/pglite": ">=0.5.0",
+    "@electric-sql/pglite-socket": ">=0.2.0",
+    "@payloadcms/db-mongodb": ">=4.0.0-0",
+    "@payloadcms/db-postgres": ">=4.0.0-0",
+    "@payloadcms/db-sqlite": ">=4.0.0-0",
+    "mongodb-memory-server": ">=10.0.0",
+    "oxfmt": ">=0.71.0",
+    "oxlint": ">=1.77.0",
+    "payload": ">=4.0.0-0",
+    "tsdown": ">=0.23.0"
+  },
+  "peerDependenciesMeta": {
+    "@electric-sql/pglite": {
+      "optional": true
+    },
+    "@electric-sql/pglite-socket": {
+      "optional": true
+    },
+    "@payloadcms/db-mongodb": {
+      "optional": true
+    },
+    "@payloadcms/db-postgres": {
+      "optional": true
+    },
+    "@payloadcms/db-sqlite": {
+      "optional": true
+    },
+    "mongodb-memory-server": {
+      "optional": true
+    },
+    "oxfmt": {
+      "optional": true
+    },
+    "oxlint": {
+      "optional": true
+    },
+    "payload": {
+      "optional": true
+    },
+    "tsdown": {
+      "optional": true
+    }
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^12.0.0",
+      "onFail": "warn"
+    },
+    "runtime": {
+      "name": "node",
+      "version": ">=24.15.0",
+      "onFail": "warn"
+    }
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  }
+}

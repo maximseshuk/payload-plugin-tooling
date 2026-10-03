@@ -1,0 +1,15 @@
+{
+  "name": "seshuk",
+  "description": "Claude Code plugins for the @seshuk Payload plugins",
+  "owner": {
+    "name": "Maxim Seshuk",
+    "url": "https://github.com/maximseshuk"
+  },
+  "plugins": [
+    {
+      "name": "payload-plugin",
+      "source": "./claude",
+      "description": "Format and lint hook and release skill for the @seshuk Payload plugins"
+    }
+  ]
+}

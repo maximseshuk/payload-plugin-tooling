@@ -1,0 +1,7 @@
+nodeVersion: 24.15.0
+pmOnFail: download
+
+allowBuilds:
+  esbuild: true
+  mongodb-memory-server: true
+  oxc-resolver: true
