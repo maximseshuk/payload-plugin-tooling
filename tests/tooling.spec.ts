@@ -1,8 +1,11 @@
+import { resolve } from 'node:path'
+
 import type { Rolldown } from 'tsdown'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
-import { testDatabase } from '../src/testDatabase.ts'
-import { pluginBuild } from '../src/tsdown.ts'
+import { testDatabase } from '@/testDatabase.ts'
+import { pluginBuild } from '@/tsdown.ts'
+import { vitestBase } from '@/vitest.ts'
 
 afterEach(() => {
   vi.unstubAllEnvs()
@@ -66,5 +69,13 @@ describe('pluginBuild', () => {
     expect(fileName({ entryFileNames: '[name].mjs' }, 'server/index')).toBe('[name].mjs')
     expect(fileName({ entryFileNames: () => '[name].cjs' }, 'index')).toBe('[name].cjs')
     expect(outputOptions({ entryFileNames: '[name].js', sourcemap: true }).sourcemap).toBe(true)
+  })
+})
+
+describe('vitestBase', () => {
+  it('maps @/ to src/ and leaves scoped packages alone', () => {
+    const [{ find, replacement }] = vitestBase.resolve.alias
+    expect(replacement).toBe(`${resolve('src')}/`)
+    expect(['@/shared/http.js', '@payloadcms/ui', '@seshuk/x'].map((id) => find.test(id))).toEqual([true, false, false])
   })
 })

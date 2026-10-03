@@ -54,6 +54,18 @@ export default defineConfig(pluginBuild())
 
 The build keeps the `src` file layout in `dist`, copies `src/**/*.css` and never bundles npm packages, except this package (see [Telemetry](#telemetry)). Pass `copy` for more files, for example `pluginBuild({ copy: ['src/**/*.edge.js'] })`.
 
+## Vitest
+
+```ts
+// tests/vitest.config.ts
+import { vitestBase } from '@seshuk/payload-plugin-tooling/vitest'
+import { defineConfig } from 'vitest/config'
+
+export default defineConfig({ ...vitestBase, test: { include: ['tests/**/*.spec.ts'] } })
+```
+
+`vitestBase` maps the `@/` alias to `src/`, the same as `paths` in `tsconfig.json`. Run Vitest from the plugin root.
+
 ## Test database
 
 ```ts

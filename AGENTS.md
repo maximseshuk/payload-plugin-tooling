@@ -22,6 +22,7 @@ Before every commit: `pnpm typecheck && pnpm lint && pnpm format && pnpm test:un
 
 - `src/oxlint.ts`, `src/oxfmt.ts`: base configs. Plugins spread and extend.
 - `src/tsdown.ts`: `pluginBuild()`, plugin build config.
+- `src/vitest.ts`: `vitestBase`, maps `@/` to `src/`.
 - `src/testDatabase.ts`: in-memory test DB by `TEST_DB`. Adapters are optional peers, imported only when picked.
 - `src/telemetry.ts`: `reportTelemetry()`, opt-out usage telemetry. `pluginBuild()` bundles it into plugin `dist/_tooling/` (`deps.onlyBundle`: nothing else). New product slug: add on server first.
 - `tsconfig.base.json`, `cliff.toml`: shared as files.

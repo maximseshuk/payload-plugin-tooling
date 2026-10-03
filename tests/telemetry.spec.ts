@@ -21,7 +21,7 @@ import {
   type TelemetryReport,
   utcDay,
   writeState,
-} from '../src/telemetry.ts'
+} from '@/telemetry.ts'
 
 const clean: Record<string, string | undefined> = {}
 const disableEnv = 'ACME_TELEMETRY_DISABLED'

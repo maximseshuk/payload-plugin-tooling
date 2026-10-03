@@ -29,6 +29,7 @@
     "./tsdown": "./src/tsdown.ts",
     "./test-database": "./src/testDatabase.ts",
     "./telemetry": "./src/telemetry.ts",
+    "./vitest": "./src/vitest.ts",
     "./tsconfig.json": "./tsconfig.base.json",
     "./cliff.toml": "./cliff.toml"
   },
@@ -53,6 +54,10 @@
       "./telemetry": {
         "types": "./dist/telemetry.d.ts",
         "default": "./dist/telemetry.js"
+      },
+      "./vitest": {
+        "types": "./dist/vitest.d.ts",
+        "default": "./dist/vitest.js"
       },
       "./tsconfig.json": "./tsconfig.base.json",
       "./cliff.toml": "./cliff.toml"
@@ -92,7 +97,8 @@
     "oxfmt": ">=0.71.0",
     "oxlint": ">=1.77.0",
     "payload": ">=4.0.0-0",
-    "tsdown": ">=0.23.0"
+    "tsdown": ">=0.23.0",
+    "vitest": ">=4.0.0"
   },
   "peerDependenciesMeta": {
     "@electric-sql/pglite": {
@@ -123,6 +129,9 @@
       "optional": true
     },
     "tsdown": {
+      "optional": true
+    },
+    "vitest": {
       "optional": true
     }
   },
