@@ -4,6 +4,8 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    open-pull-requests-limit: 5
+    versioning-strategy: increase-if-necessary
     cooldown:
       default-days: 2
     commit-message:
@@ -12,11 +14,32 @@ updates:
     ignore:
       - dependency-name: payload
         update-types: [version-update:semver-major]
+      - dependency-name: payload
+        versions: ['>=4.0.0-i <4.0.0-j']
       - dependency-name: '@payloadcms/*'
         update-types: [version-update:semver-major]
+      - dependency-name: '@payloadcms/*'
+        versions: ['>=4.0.0-i <4.0.0-j']
+    groups:
+      payload:
+        patterns:
+          - payload
+          - '@payloadcms/*'
+      dev:
+        dependency-type: development
+        update-types: [minor, patch]
+        exclude-patterns:
+          - payload
+          - '@payloadcms/*'
+
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
     commit-message:
       prefix: ci
+    cooldown:
+      default-days: 2
+    groups:
+      actions:
+        patterns: ['*']
