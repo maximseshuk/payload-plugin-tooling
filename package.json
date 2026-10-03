@@ -30,6 +30,7 @@
     "./test-database": "./src/testDatabase.ts",
     "./telemetry": "./src/telemetry.ts",
     "./vitest": "./src/vitest.ts",
+    "./fields": "./src/fields.ts",
     "./tsconfig.json": "./tsconfig.base.json",
     "./cliff.toml": "./cliff.toml"
   },
@@ -58,6 +59,10 @@
       "./vitest": {
         "types": "./dist/vitest.d.ts",
         "default": "./dist/vitest.js"
+      },
+      "./fields": {
+        "types": "./dist/fields.d.ts",
+        "default": "./dist/fields.js"
       },
       "./tsconfig.json": "./tsconfig.base.json",
       "./cliff.toml": "./cliff.toml"

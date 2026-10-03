@@ -1,6 +1,6 @@
 # @seshuk/payload-plugin-tooling
 
-Shared dev config for the `@seshuk` Payload plugins: lint, format, TypeScript, build, test database, telemetry, changelog and GitHub workflows. Install it as a dev dependency only. Plugins never import it at runtime: the build bundles the telemetry module into the plugin.
+Shared dev config for the `@seshuk` Payload plugins: lint, format, TypeScript, build, test database, telemetry, field placement, changelog and GitHub workflows. Install it as a dev dependency only. Plugins never import it at runtime: the build bundles the telemetry and fields modules into the plugin.
 
 ```bash
 pnpm add -D @seshuk/payload-plugin-tooling
@@ -52,7 +52,7 @@ import { defineConfig } from 'tsdown'
 export default defineConfig(pluginBuild())
 ```
 
-The build keeps the `src` file layout in `dist`, copies `src/**/*.css` and never bundles npm packages, except this package (see [Telemetry](#telemetry)). Pass `copy` for more files, for example `pluginBuild({ copy: ['src/**/*.edge.js'] })`.
+The build keeps the `src` file layout in `dist`, copies `src/**/*.css` and never bundles npm packages, except this package (see [Telemetry](#telemetry) and [Fields](#fields)). Pass `copy` for more files, for example `pluginBuild({ copy: ['src/**/*.edge.js'] })`.
 
 ## Vitest
 
@@ -114,6 +114,21 @@ config.onInit = async (payload) => {
 ```
 
 `pluginBuild()` bundles this module into the plugin's `dist/_tooling/`, so it is never a runtime dependency. Any other npm package that ends up in the bundle fails the build. `telemetry: { endpoint }` sends to another collector. The server accepts only known products: add a new product slug on the server first.
+
+## Fields
+
+```ts
+import { findFieldPaths, insertField, type InsertPosition } from '@seshuk/payload-plugin-tooling/fields'
+
+collection.fields = insertField(collection.fields, { after: 'meta.title' }, myField)
+const paths = findFieldPaths(collection.fields, (field) => Boolean(field.custom?.myPlugin))
+```
+
+`insertField(fields, position, field)` returns a new field list. `position` is an `InsertPosition`: `'first'`, `'last'`, `'sidebar'` (appends the field with `admin.position: 'sidebar'`), `{ after: path }` or `{ before: path }`. A path names fields by dots through groups, arrays and named tabs; rows, collapsibles, unnamed groups and unnamed tabs add no segment. A path that does not match from the top is also looked up inside every group and tab, so `{ after: 'title' }` finds `meta.title`. When that finds the name in more than one place, it throws `Field path "<path>" is ambiguous, use the full path: a.x, b.x`. An unknown path throws `Field path "<path>" not found`.
+
+`findFieldPaths(fields, predicate)` returns the paths of the named fields that match, with the same naming rules, for example `['slug', 'meta.description', 'seo.image']`.
+
+Both only import types from `payload` and work with Payload 3 and 4. `pluginBuild()` bundles the module into the plugin's `dist/_tooling/`.
 
 ## GitHub workflows
 

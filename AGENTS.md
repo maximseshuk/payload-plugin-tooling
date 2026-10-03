@@ -23,9 +23,10 @@ Before every commit: `pnpm typecheck && pnpm lint && pnpm format && pnpm test:un
 
 - `src/oxlint.ts`, `src/oxfmt.ts`: base configs. Plugins spread and extend.
 - `src/tsdown.ts`: `pluginBuild()`, plugin build config.
+- `src/fields.ts`: `insertField()`, `findFieldPaths()`, `InsertPosition`. Bundled into plugin `dist/_tooling/` like telemetry. Type-only `payload` imports: Payload 3 and 4.
 - `src/vitest.ts`: `vitestBase`, maps `@/` to `src/`.
 - `src/testDatabase.ts`: in-memory test DB by `TEST_DB`. Adapters are optional peers, imported only when picked.
-- `src/telemetry.ts`: `reportTelemetry()`, opt-out usage telemetry. `pluginBuild()` bundles it into plugin `dist/_tooling/` (`deps.onlyBundle`: nothing else). New product slug: add on server first.
+- `src/telemetry.ts`: `reportTelemetry()`, opt-out usage telemetry. `pluginBuild()` bundles it into plugin `dist/_tooling/` (`deps.onlyBundle`: this package only). New product slug: add on server first.
 - `tsconfig.base.json`, `cliff.toml`: shared as files.
 - `.github/workflows/ci.yml`, `release.yml`: run here; plugins call them via `workflow_call`.
 - `.zed/`, `.vscode/`: editor settings. Plugins keep identical copies. Change here first, then copy to each plugin.
