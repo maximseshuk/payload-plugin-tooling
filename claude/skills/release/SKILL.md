@@ -1,6 +1,6 @@
 ---
 name: release
-description: Prepare a release of a @seshuk Payload plugin. Bump version, write release notes, run the gate, make the release commit and tag.
+description: Prepare a release of a @maximseshuk Payload plugin. Bump version, write release notes, run the gate, make the release commit and tag.
 argument-hint: '[version | patch | minor | major | beta]'
 disable-model-invocation: true
 ---

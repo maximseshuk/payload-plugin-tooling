@@ -1,6 +1,6 @@
 {
   "name": "payload-plugin",
-  "description": "Format and lint hook and release skill for the @seshuk Payload plugins",
+  "description": "Format and lint hook and release skill for the @maximseshuk Payload plugins",
   "author": {
     "name": "Maxim Seshuk"
   }
