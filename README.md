@@ -1,6 +1,6 @@
 # @seshuk/payload-plugin-tooling
 
-Shared dev config for the `@seshuk` Payload plugins: lint, format, TypeScript, build, test database, changelog and GitHub workflows. Install it as a dev dependency only. Plugins never import it at runtime.
+Shared dev config for the `@seshuk` Payload plugins: lint, format, TypeScript, build, test database, telemetry, changelog and GitHub workflows. Install it as a dev dependency only. Plugins never import it at runtime: the build bundles the telemetry module into the plugin.
 
 ```bash
 pnpm add -D @seshuk/payload-plugin-tooling
@@ -52,7 +52,7 @@ import { defineConfig } from 'tsdown'
 export default defineConfig(pluginBuild())
 ```
 
-The build keeps the `src` file layout in `dist`, copies `src/**/*.css` and never bundles npm packages. Pass `copy` for more files, for example `pluginBuild({ copy: ['src/**/*.edge.js'] })`.
+The build keeps the `src` file layout in `dist`, copies `src/**/*.css` and never bundles npm packages, except this package (see [Telemetry](#telemetry)). Pass `copy` for more files, for example `pluginBuild({ copy: ['src/**/*.edge.js'] })`.
 
 ## Test database
 
@@ -69,6 +69,39 @@ export default buildConfig({ db: await testDatabase() /* … */ })
 | `sqlite`   | `@payloadcms/db-sqlite`                                                          |
 | `postgres` | `@payloadcms/db-postgres`, `@electric-sql/pglite`, `@electric-sql/pglite-socket` |
 | `mongodb`  | `@payloadcms/db-mongodb`, `mongodb-memory-server`                                |
+
+## Telemetry
+
+Anonymous usage telemetry, shared by all plugins. Once a day per project, it sends the plugin, Payload and Node versions, the OS, a hashed project ID and the features the plugin passes. It never sends secrets, IPs, keys or names. On the first run, it logs a notice with the opt-outs.
+
+Telemetry is off when any of these is set:
+
+- `telemetry: false` in the Payload config or in the plugin options;
+- `DO_NOT_TRACK=1` or the plugin's own variable, for example `BUNNY_TELEMETRY_DISABLED=1`;
+- `CI` or `NODE_ENV=test`.
+
+Call `reportTelemetry` in `onInit` and do not wait for it. It never throws. Features are booleans only, never names or values:
+
+```ts
+import { reportTelemetry, type TelemetryOption } from '@seshuk/payload-plugin-tooling/telemetry'
+
+export type MyPluginConfig = { telemetry?: TelemetryOption /* … */ }
+
+config.onInit = async (payload) => {
+  await existingOnInit?.(payload)
+  void reportTelemetry({
+    disableEnv: 'BUNNY_TELEMETRY_DISABLED',
+    docsUrl: 'https://payload-storage-bunny.seshuk.im/v4/configuration/telemetry',
+    features: { signedUrls: Boolean(pluginConfig.signedUrls) },
+    option: pluginConfig.telemetry,
+    packageName: '@seshuk/payload-storage-bunny',
+    payload,
+    product: 'payload-storage-bunny',
+  })
+}
+```
+
+`pluginBuild()` bundles this module into the plugin's `dist/_tooling/`, so it is never a runtime dependency. Any other npm package that ends up in the bundle fails the build. `telemetry: { endpoint }` sends to another collector. The server accepts only known products: add a new product slug on the server first.
 
 ## GitHub workflows
 

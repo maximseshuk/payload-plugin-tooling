@@ -28,6 +28,7 @@
     "./oxfmt": "./src/oxfmt.ts",
     "./tsdown": "./src/tsdown.ts",
     "./test-database": "./src/testDatabase.ts",
+    "./telemetry": "./src/telemetry.ts",
     "./tsconfig.json": "./tsconfig.base.json",
     "./cliff.toml": "./cliff.toml"
   },
@@ -48,6 +49,10 @@
       "./test-database": {
         "types": "./dist/testDatabase.d.ts",
         "default": "./dist/testDatabase.js"
+      },
+      "./telemetry": {
+        "types": "./dist/telemetry.d.ts",
+        "default": "./dist/telemetry.js"
       },
       "./tsconfig.json": "./tsconfig.base.json",
       "./cliff.toml": "./cliff.toml"

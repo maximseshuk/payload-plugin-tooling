@@ -6,7 +6,10 @@ export type PluginBuildOptions = {
 
 export const pluginBuild = ({ copy = [] }: PluginBuildOptions = {}): UserConfig => ({
   copy: ['src/**/*.css', ...copy].map((from) => ({ flatten: false, from, to: 'dist' })),
-  deps: { neverBundle: (id) => id.endsWith('.css') || /^(?![./]|@\/|\0)/.test(id) },
+  deps: {
+    neverBundle: (id) => id.endsWith('.css') || /^(?![./]|@\/|\0|@seshuk\/payload-plugin-tooling(?:\/|$))/.test(id),
+    onlyBundle: ['@seshuk/payload-plugin-tooling'],
+  },
   dts: true,
   entry: ['src/**/*.ts', 'src/**/*.tsx'],
   exports: false,
@@ -14,6 +17,15 @@ export const pluginBuild = ({ copy = [] }: PluginBuildOptions = {}): UserConfig 
   format: 'esm',
   hash: false,
   outDir: 'dist',
+  outputOptions: ({ entryFileNames = '[name].js', ...options }) => ({
+    ...options,
+    entryFileNames: (chunk) => {
+      const fileName = typeof entryFileNames === 'function' ? entryFileNames(chunk) : entryFileNames
+      return chunk.name.includes('node_modules/')
+        ? fileName.replace('[name]', `_tooling/${chunk.name.slice(chunk.name.lastIndexOf('/') + 1)}`)
+        : fileName
+    },
+  }),
   platform: 'node',
   sourcemap: true,
   target: 'esnext',

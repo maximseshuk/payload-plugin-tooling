@@ -23,6 +23,7 @@ Before every commit: `pnpm typecheck && pnpm lint && pnpm format && pnpm test:un
 - `src/oxlint.ts`, `src/oxfmt.ts`: base configs. Plugins spread and extend.
 - `src/tsdown.ts`: `pluginBuild()`, plugin build config.
 - `src/testDatabase.ts`: in-memory test DB by `TEST_DB`. Adapters are optional peers, imported only when picked.
+- `src/telemetry.ts`: `reportTelemetry()`, opt-out usage telemetry. `pluginBuild()` bundles it into plugin `dist/_tooling/` (`deps.onlyBundle`: nothing else). New product slug: add on server first.
 - `tsconfig.base.json`, `cliff.toml`: shared as files.
 - `.github/workflows/ci.yml`, `release.yml`: run here; plugins call them via `workflow_call`.
 - `.zed/`, `.vscode/`: editor settings. Plugins keep identical copies. Change here first, then copy to each plugin.
@@ -34,6 +35,7 @@ Before every commit: `pnpm typecheck && pnpm lint && pnpm format && pnpm test:un
 - Change here reaches every plugin. Plugin-specific settings stay in plugin.
 - Breaking change to export or workflow input: new minor on 0.x, new major after 1.0.
 - Plugins pin workflows by tag (`@vX.Y.Z`). Never move tags.
+- Telemetry features: booleans only, never names or values.
 - No code comments.
 - One-line Conventional Commit. No co-authored-by or copyright trailers.
 - Commit locally. Push only when asked.
