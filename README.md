@@ -169,7 +169,7 @@ jobs:
 
 The release workflow:
 
-- builds the changelog with git-cliff from the plugin's `cliff.toml`, or from the shared one in this package when the plugin has none;
+- builds the changelog with git-cliff from the plugin's `cliff.toml`, or from the shared one in this package when the plugin has none, and takes the repository for links from `GITHUB_REPO`;
 - puts `.github/releases/vX.Y.Z.md` above the changelog when the file exists;
 - sets the npm dist-tag: `beta` for `X.Y.Z-beta.N`, `latest` for the newest major, `latest-N` for an older major;
 - publishes with npm trusted publishing (OIDC), or with the `NPM_TOKEN` secret for the first release of a new package.
