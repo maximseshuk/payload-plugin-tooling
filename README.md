@@ -170,13 +170,13 @@ jobs:
 The release workflow:
 
 - builds the changelog with git-cliff from the plugin's `cliff.toml`, or from the shared one in this package when the plugin has none, and takes the repository for links from `GITHUB_REPO`;
-- puts `.github/releases/vX.Y.Z.md` above the changelog when the file exists;
+- puts `.github/releases/vX.Y.Z.md` under the version heading and above the commit list when the file exists;
 - sets the npm dist-tag: `beta` for `X.Y.Z-beta.N`, `latest` for the newest major, `latest-N` for an older major;
 - publishes with npm trusted publishing (OIDC), or with the `NPM_TOKEN` secret for the first release of a new package.
 
 ### Release notes
 
-To add text above the generated changelog, such as a short intro or breaking changes, commit `.github/releases/vX.Y.Z.md` with the release. Keep it to a few lines and link to the upgrade guide in the docs for the details.
+To add text under the version heading and above the commit list, such as a short intro or breaking changes, commit `.github/releases/vX.Y.Z.md` with the release. Keep it to a few lines and link to the upgrade guide in the docs for the details.
 
 ```markdown
 <!-- .github/releases/v4.0.0.md -->
