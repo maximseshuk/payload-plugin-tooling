@@ -113,7 +113,7 @@ config.onInit = async (payload) => {
 }
 ```
 
-`pluginBuild()` bundles this module into the plugin's `dist/_tooling/`, so it is never a runtime dependency. Any other npm package that ends up in the bundle fails the build. `telemetry: { endpoint }` sends to another collector. The server accepts only known products: add a new product slug on the server first.
+`pluginBuild()` bundles this module into the plugin's `dist/_tooling/`, so it is never a runtime dependency. Any other npm package that ends up in the bundle fails the build. `telemetry: { url }` sends to another collector. The server accepts only known products: add a new product slug on the server first.
 
 ## Fields
 
@@ -144,7 +144,7 @@ on:
     branches: [main]
 jobs:
   ci:
-    uses: maximseshuk/payload-plugin-tooling/.github/workflows/ci.yml@v0.2.0
+    uses: maximseshuk/payload-plugin-tooling/.github/workflows/ci.yml@v0.2.1
     with:
       node-versions: '["24"]'
 ```
@@ -159,7 +159,7 @@ permissions:
   contents: read
 jobs:
   release:
-    uses: maximseshuk/payload-plugin-tooling/.github/workflows/release.yml@v0.2.0
+    uses: maximseshuk/payload-plugin-tooling/.github/workflows/release.yml@v0.2.1
     permissions:
       contents: write
       id-token: write

@@ -29,7 +29,7 @@ const disableEnv = 'ACME_TELEMETRY_DISABLED'
 describe('isTelemetryDisabled', () => {
   it('keeps telemetry on by default', () => {
     expect(isTelemetryDisabled({ disableEnv, env: clean, option: undefined, payloadTelemetry: true })).toBe(false)
-    expect(isTelemetryDisabled({ disableEnv, env: clean, option: { endpoint: 'x' } })).toBe(false)
+    expect(isTelemetryDisabled({ disableEnv, env: clean, option: { url: 'x' } })).toBe(false)
   })
 
   it('respects the Payload telemetry opt-out', () => {
@@ -240,10 +240,10 @@ describe('reportTelemetry', () => {
     expect(saveState).toHaveBeenCalledWith(expect.any(String), { lastSentDay: expect.any(String), noticeShown: true })
   })
 
-  it('uses a custom endpoint from option.endpoint', async () => {
+  it('uses a custom endpoint from option.url', async () => {
     const send = vi.fn().mockResolvedValue(undefined)
 
-    await run({ option: { endpoint: 'https://my.collector/v1/collect' } }, { send, writeState: vi.fn() })
+    await run({ option: { url: 'https://my.collector/v1/collect' } }, { send, writeState: vi.fn() })
 
     expect(send.mock.calls[0][1]).toBe('https://my.collector/v1/collect')
   })

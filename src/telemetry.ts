@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url'
 
 import type { Payload } from 'payload'
 
-export type TelemetryOption = boolean | { endpoint?: string }
+export type TelemetryOption = boolean | { url?: string }
 
 export type ProjectIdSource = 'cwd' | 'git' | 'packageJSON' | 'serverURL'
 
@@ -284,6 +284,6 @@ export const reportTelemetry = async (
 
     writeStateImpl(projectId, { lastSentDay: today, noticeShown: true })
 
-    await send(report, typeof option === 'object' && option.endpoint ? option.endpoint : TELEMETRY_ENDPOINT)
+    await send(report, typeof option === 'object' && option.url ? option.url : TELEMETRY_ENDPOINT)
   } catch {}
 }
