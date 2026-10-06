@@ -73,8 +73,12 @@ jobs:
         env:
           CHANGELOG: ${{ steps.changelog.outputs.content }}
         run: |
-          notes=".github/releases/$GITHUB_REF_NAME.md"
-          { if [ -f "$notes" ]; then cat "$notes"; printf '\n\n'; fi; printf '%s\n' "$CHANGELOG"; } > "$RUNNER_TEMP/release-notes.md"
+          printf '%s\n' "$CHANGELOG" | awk -v notes=".github/releases/$GITHUB_REF_NAME.md" '
+            function emit(  line) { if ((getline line < notes) > 0) { print ""; print line; while ((getline line < notes) > 0) print line; print "" } }
+            { print }
+            /^## / && !done { done = 1; emit() }
+            END { if (!done) emit() }
+          ' > "$RUNNER_TEMP/release-notes.md"
 
       - name: Resolve npm dist-tag
         id: dist
