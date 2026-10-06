@@ -1,6 +1,6 @@
 {
   "name": "@seshuk/payload-plugin-tooling",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared lint, format, TypeScript, build and test config for the @maximseshuk Payload plugins",
   "keywords": [
     "payload",
