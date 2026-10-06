@@ -1,6 +1,6 @@
 # @seshuk/payload-plugin-tooling
 
-Shared dev config for the `@seshuk` Payload plugins: lint, format, TypeScript, build, test database, changelog and GitHub workflows. Install it as a dev dependency only. Plugins never import it at runtime.
+Shared dev config for the `@seshuk` Payload plugins: lint, format, TypeScript, build, test database, telemetry, field placement, changelog and GitHub workflows. Install it as a dev dependency only. Plugins never import it at runtime: the build bundles the telemetry and fields modules into the plugin.
 
 ```bash
 pnpm add -D @seshuk/payload-plugin-tooling
@@ -52,7 +52,19 @@ import { defineConfig } from 'tsdown'
 export default defineConfig(pluginBuild())
 ```
 
-The build keeps the `src` file layout in `dist`, copies `src/**/*.css` and never bundles npm packages. Pass `copy` for more files, for example `pluginBuild({ copy: ['src/**/*.edge.js'] })`.
+The build keeps the `src` file layout in `dist`, copies `src/**/*.css` and never bundles npm packages, except this package (see [Telemetry](#telemetry) and [Fields](#fields)). Pass `copy` for more files, for example `pluginBuild({ copy: ['src/**/*.edge.js'] })`.
+
+## Vitest
+
+```ts
+// tests/vitest.config.ts
+import { vitestBase } from '@seshuk/payload-plugin-tooling/vitest'
+import { defineConfig } from 'vitest/config'
+
+export default defineConfig({ ...vitestBase, test: { include: ['tests/**/*.spec.ts'] } })
+```
+
+`vitestBase` maps the `@/` alias to `src/`, the same as `paths` in `tsconfig.json`. Run Vitest from the plugin root.
 
 ## Test database
 
@@ -70,9 +82,57 @@ export default buildConfig({ db: await testDatabase() /* … */ })
 | `postgres` | `@payloadcms/db-postgres`, `@electric-sql/pglite`, `@electric-sql/pglite-socket` |
 | `mongodb`  | `@payloadcms/db-mongodb`, `mongodb-memory-server`                                |
 
+## Telemetry
+
+Anonymous usage telemetry, shared by all plugins. Once a day per project, it sends the plugin, Payload and Node versions, the OS, a hashed project ID and the features the plugin passes. It never sends secrets, IPs, keys or names. On the first run, it logs a notice with the opt-outs.
+
+Telemetry is off when any of these is set:
+
+- `telemetry: false` in the Payload config or in the plugin options;
+- `DO_NOT_TRACK=1` or the plugin's own variable, for example `BUNNY_TELEMETRY_DISABLED=1`;
+- `CI` or `NODE_ENV=test`.
+
+Call `reportTelemetry` in `onInit` and do not wait for it. It never throws. Features are booleans only, never names or values:
+
+```ts
+import { reportTelemetry, type TelemetryOption } from '@seshuk/payload-plugin-tooling/telemetry'
+
+export type MyPluginConfig = { telemetry?: TelemetryOption /* … */ }
+
+config.onInit = async (payload) => {
+  await existingOnInit?.(payload)
+  void reportTelemetry({
+    disableEnv: 'BUNNY_TELEMETRY_DISABLED',
+    docsUrl: 'https://payload-storage-bunny.seshuk.im/v4/configuration/telemetry',
+    features: { signedUrls: Boolean(pluginConfig.signedUrls) },
+    option: pluginConfig.telemetry,
+    packageName: '@seshuk/payload-storage-bunny',
+    payload,
+    product: 'payload-storage-bunny',
+  })
+}
+```
+
+`pluginBuild()` bundles this module into the plugin's `dist/_tooling/`, so it is never a runtime dependency. Any other npm package that ends up in the bundle fails the build. `telemetry: { endpoint }` sends to another collector. The server accepts only known products: add a new product slug on the server first.
+
+## Fields
+
+```ts
+import { findFieldPaths, insertField, type InsertPosition } from '@seshuk/payload-plugin-tooling/fields'
+
+collection.fields = insertField(collection.fields, { after: 'meta.title' }, myField)
+const paths = findFieldPaths(collection.fields, (field) => Boolean(field.custom?.myPlugin))
+```
+
+`insertField(fields, position, field)` returns a new field list. `position` is an `InsertPosition`: `'first'`, `'last'`, `'sidebar'` (appends the field with `admin.position: 'sidebar'`), `{ after: path }` or `{ before: path }`. A path names fields by dots through groups, arrays and named tabs; rows, collapsibles, unnamed groups and unnamed tabs add no segment. A path that does not match from the top is also looked up inside every group and tab, so `{ after: 'title' }` finds `meta.title`. When that finds the name in more than one place, it throws `Field path "<path>" is ambiguous, use the full path: a.x, b.x`. An unknown path throws `Field path "<path>" not found`.
+
+`findFieldPaths(fields, predicate)` returns the paths of the named fields that match, with the same naming rules, for example `['slug', 'meta.description', 'seo.image']`.
+
+Both only import types from `payload` and work with Payload 3 and 4. `pluginBuild()` bundles the module into the plugin's `dist/_tooling/`.
+
 ## GitHub workflows
 
-Both workflows run the scripts `lint`, `format:check`, `typecheck`, `test:unit` and `build`. Every plugin must define them.
+Both workflows run the scripts `lint`, `format:check`, `typecheck`, `test:unit`, `test:int` and `build`. Every plugin must define them. `test:unit` runs tests without a database or network; `test:int` runs the database tests.
 
 ```yaml
 # .github/workflows/ci.yml
@@ -84,7 +144,7 @@ on:
     branches: [main]
 jobs:
   ci:
-    uses: maximseshuk/payload-plugin-tooling/.github/workflows/ci.yml@v0.1.0
+    uses: maximseshuk/payload-plugin-tooling/.github/workflows/ci.yml@v0.2.0
     with:
       node-versions: '["24"]'
 ```
@@ -99,7 +159,7 @@ permissions:
   contents: read
 jobs:
   release:
-    uses: maximseshuk/payload-plugin-tooling/.github/workflows/release.yml@v0.1.0
+    uses: maximseshuk/payload-plugin-tooling/.github/workflows/release.yml@v0.2.0
     permissions:
       contents: write
       id-token: write
@@ -109,7 +169,7 @@ jobs:
 
 The release workflow:
 
-- builds the changelog with git-cliff from the plugin's `cliff.toml`, or from the shared one in this package when the plugin has none;
+- builds the changelog with git-cliff from the plugin's `cliff.toml`, or from the shared one in this package when the plugin has none, and takes the repository for links from `GITHUB_REPO`;
 - puts `.github/releases/vX.Y.Z.md` above the changelog when the file exists;
 - sets the npm dist-tag: `beta` for `X.Y.Z-beta.N`, `latest` for the newest major, `latest-N` for an older major;
 - publishes with npm trusted publishing (OIDC), or with the `NPM_TOKEN` secret for the first release of a new package.

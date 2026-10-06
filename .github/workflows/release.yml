@@ -41,6 +41,7 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm format:check
       - run: pnpm test:unit
+      - run: pnpm test:int
       - run: pnpm build
 
       - name: Resolve changelog config and range
@@ -63,8 +64,9 @@ jobs:
         id: changelog
         with:
           config: ${{ steps.range.outputs.config }}
-          args: ${{ steps.range.outputs.args }} --strip header --github-repo ${{ github.repository }}
+          args: ${{ steps.range.outputs.args }} --strip header
         env:
+          GITHUB_REPO: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Compose release notes

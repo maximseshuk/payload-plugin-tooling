@@ -1,7 +1,7 @@
 {
   "name": "@seshuk/payload-plugin-tooling",
-  "version": "0.1.0",
-  "description": "Shared lint, format, TypeScript, build and test config for @seshuk Payload plugins",
+  "version": "0.2.0",
+  "description": "Shared lint, format, TypeScript, build and test config for the @maximseshuk Payload plugins",
   "keywords": [
     "payload",
     "payload-plugin",
@@ -28,6 +28,9 @@
     "./oxfmt": "./src/oxfmt.ts",
     "./tsdown": "./src/tsdown.ts",
     "./test-database": "./src/testDatabase.ts",
+    "./telemetry": "./src/telemetry.ts",
+    "./vitest": "./src/vitest.ts",
+    "./fields": "./src/fields.ts",
     "./tsconfig.json": "./tsconfig.base.json",
     "./cliff.toml": "./cliff.toml"
   },
@@ -49,6 +52,18 @@
         "types": "./dist/testDatabase.d.ts",
         "default": "./dist/testDatabase.js"
       },
+      "./telemetry": {
+        "types": "./dist/telemetry.d.ts",
+        "default": "./dist/telemetry.js"
+      },
+      "./vitest": {
+        "types": "./dist/vitest.d.ts",
+        "default": "./dist/vitest.js"
+      },
+      "./fields": {
+        "types": "./dist/fields.d.ts",
+        "default": "./dist/fields.js"
+      },
       "./tsconfig.json": "./tsconfig.base.json",
       "./cliff.toml": "./cliff.toml"
     }
@@ -59,7 +74,8 @@
     "format:check": "oxfmt --check",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
-    "test:unit": "vitest run",
+    "test:int": "vitest run int.spec",
+    "test:unit": "vitest run --exclude '**/*.int.spec.ts'",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
@@ -87,7 +103,8 @@
     "oxfmt": ">=0.71.0",
     "oxlint": ">=1.77.0",
     "payload": ">=4.0.0-0",
-    "tsdown": ">=0.23.0"
+    "tsdown": ">=0.23.0",
+    "vitest": ">=4.0.0"
   },
   "peerDependenciesMeta": {
     "@electric-sql/pglite": {
@@ -118,6 +135,9 @@
       "optional": true
     },
     "tsdown": {
+      "optional": true
+    },
+    "vitest": {
       "optional": true
     }
   },
