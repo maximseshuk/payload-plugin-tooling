@@ -144,7 +144,7 @@ on:
     branches: [main]
 jobs:
   ci:
-    uses: maximseshuk/payload-plugin-tooling/.github/workflows/ci.yml@v0.2.1
+    uses: maximseshuk/payload-plugin-tooling/.github/workflows/ci.yml@v0.2.3
     with:
       node-versions: '["24"]'
 ```
@@ -159,7 +159,7 @@ permissions:
   contents: read
 jobs:
   release:
-    uses: maximseshuk/payload-plugin-tooling/.github/workflows/release.yml@v0.2.1
+    uses: maximseshuk/payload-plugin-tooling/.github/workflows/release.yml@v0.2.3
     permissions:
       contents: write
       id-token: write

@@ -28,6 +28,7 @@ export const pluginBuild = ({ copy = [] }: PluginBuildOptions = {}): UserConfig 
   fixedExtension: false,
   format: 'esm',
   hash: false,
+  inputOptions: { experimental: { attachDebugInfo: 'none' } },
   outDir: 'dist',
   outputOptions: ({ entryFileNames = '[name].js', ...options }) => ({
     ...options,
@@ -37,6 +38,8 @@ export const pluginBuild = ({ copy = [] }: PluginBuildOptions = {}): UserConfig 
         ? fileName.replace('[name]', `_tooling/${chunk.name.slice(chunk.name.lastIndexOf('/') + 1)}`)
         : fileName
     },
+    sourcemapPathTransform: (source) =>
+      source.includes('node_modules/') ? source.slice(source.lastIndexOf('node_modules/')) : source,
   }),
   platform: 'node',
   plugins: [aliasedCss],
