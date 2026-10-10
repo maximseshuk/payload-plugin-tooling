@@ -173,14 +173,14 @@ importers:
         specifier: 0.2.11
         version: 0.2.11(@electric-sql/pglite-age@0.0.9(@electric-sql/pglite@0.5.8))(@electric-sql/pglite-pg_hashids@0.0.9(@electric-sql/pglite@0.5.8))(@electric-sql/pglite-pg_ivm@0.0.9(@electric-sql/pglite@0.5.8))(@electric-sql/pglite-pg_textsearch@0.0.10(@electric-sql/pglite@0.5.8))(@electric-sql/pglite-pg_uuidv7@0.0.9(@electric-sql/pglite@0.5.8))(@electric-sql/pglite-pgtap@0.0.9(@electric-sql/pglite@0.5.8))(@electric-sql/pglite-pgvector@0.0.9(@electric-sql/pglite@0.5.8))(@electric-sql/pglite@0.5.8)
       '@payloadcms/db-mongodb':
-        specifier: 4.0.0-canary.37
-        version: 4.0.0-canary.37(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))
+        specifier: 4.0.0-canary.38
+        version: 4.0.0-canary.38(payload@4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2))
       '@payloadcms/db-postgres':
-        specifier: 4.0.0-canary.37
-        version: 4.0.0-canary.37(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))
+        specifier: 4.0.0-canary.38
+        version: 4.0.0-canary.38(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(payload@4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2))
       '@payloadcms/db-sqlite':
-        specifier: 4.0.0-canary.37
-        version: 4.0.0-canary.37(@electric-sql/pglite@0.5.8)(@types/pg@8.20.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
+        specifier: 4.0.0-canary.38
+        version: 4.0.0-canary.38(@electric-sql/pglite@0.5.8)(@types/pg@8.20.0)(payload@4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
       '@types/node':
         specifier: ^26.6.4
         version: 26.6.4
@@ -194,17 +194,17 @@ importers:
         specifier: ^1.86.0
         version: 1.86.0
       payload:
-        specifier: 4.0.0-canary.37
-        version: 4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2)
+        specifier: 4.0.0-canary.38
+        version: 4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2)
       tsdown:
         specifier: ^0.23.0
-        version: 0.23.0(tsx@4.22.4)(typescript@7.0.2)
+        version: 0.23.0(tsx@4.23.15)(typescript@7.0.2)
       typescript:
         specifier: 7.0.2
         version: 7.0.2
       vitest:
         specifier: ^5.0.3
-        version: 5.0.3(@types/node@26.6.4)(vite@8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.22.4))
+        version: 5.0.3(@types/node@26.6.4)(vite@8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.23.15))
 
 packages:
 
@@ -791,8 +791,8 @@ packages:
   '@neon-rs/load@0.0.4':
     resolution: {integrity: sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==}
 
-  '@next/env@16.3.3':
-    resolution: {integrity: sha512-U2eYQRwXj+dsqxV79zFqExDdatnNY/ZWc2nsJU1p/OgT7fd3dXwlF6OjYaFQCfMoeTA19PWq+wVmYgimVA+V+g==}
+  '@next/env@16.4.0':
+    resolution: {integrity: sha512-pyLlT5oafGlX8X7xjgGNXz5dNIDSxREm+qD6i9VLSZiZFopA/XWl8NM/KPmLx/8EG/++c49iid3gNWSQW1+2dQ==}
 
   '@oxc-project/types@0.152.0':
     resolution: {integrity: sha512-oM/5rLBm2tPkg0iBgkH/FOeR3PCDpY19GTgAZjMFM8h9WI9VW7cLgzp6nwtarYKmovavIQZ+Fe/RKX/8C8O/Rw==}
@@ -1041,28 +1041,28 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@payloadcms/db-mongodb@4.0.0-canary.37':
-    resolution: {integrity: sha512-kXf6PkoC4lw1ceVlxDKugdM8xjaPQY5lhXJ9IBq7A+TpZYmDafh+OJWEviJqm/+JXKttnvFD0XPrI+fyCX5W4w==}
+  '@payloadcms/db-mongodb@4.0.0-canary.38':
+    resolution: {integrity: sha512-FMjs3XFCOYpfQp5CKIVkwGAdPO8c6L77MtQF9t/nvLn+eoBhwnxY8UUUHewnGq8n4qf5/USZd1+hqICERnScYA==}
     peerDependencies:
-      payload: 4.0.0-canary.37
+      payload: 4.0.0-canary.38
 
-  '@payloadcms/db-postgres@4.0.0-canary.37':
-    resolution: {integrity: sha512-VuIcN8Dwbu8amag+Ees7jPAV59dBMdJBlunHSv3dIcsn12tDyUFTqh1nIJDdsk2FrDxMCO/a6R4nuzSC4oH/Wg==}
+  '@payloadcms/db-postgres@4.0.0-canary.38':
+    resolution: {integrity: sha512-G0hyr3kr177Ztnu9ri8/iBpeiVGv9XyvvLh1YgEgloWxJLQqI+w3UKx1JFa8n+wzdYL3lBpdFGKG9ONku+pteA==}
     peerDependencies:
-      payload: 4.0.0-canary.37
+      payload: 4.0.0-canary.38
 
-  '@payloadcms/db-sqlite@4.0.0-canary.37':
-    resolution: {integrity: sha512-TFoEiWLHGOpe+e1zCzM8WN6cm/yRrpFBYcZeXiDFUu+MsftmGsFSlv43xZssLzIIyd92VZx3KFc8G9QqGOq+ZA==}
+  '@payloadcms/db-sqlite@4.0.0-canary.38':
+    resolution: {integrity: sha512-4cIMI6XscQaSimiX6J+yEjsIVcdzkaXSGq9HbvyXqoyKWRkDkAqQrJ+aEmQ2PpTQICnFGXeOH1EK57C/5XYhPA==}
     peerDependencies:
-      payload: 4.0.0-canary.37
+      payload: 4.0.0-canary.38
 
-  '@payloadcms/drizzle@4.0.0-canary.37':
-    resolution: {integrity: sha512-hze+8ppNoINxNbWtXT460CHZwoTVkATqVmy7jzgmZiw0AHBJMIPCeDs3JioV/pgE45niH5nJIpkvCUCM0EjRoA==}
+  '@payloadcms/drizzle@4.0.0-canary.38':
+    resolution: {integrity: sha512-IntAuQqgNzor1ZvzlhD0Bb9w8XrUWPYH62UKYhDVUcA00XFs6etkggeGt4iULweM7sMZZI82dm0syJ6JfT6eHA==}
     peerDependencies:
-      payload: 4.0.0-canary.37
+      payload: 4.0.0-canary.38
 
-  '@payloadcms/translations@4.0.0-canary.37':
-    resolution: {integrity: sha512-mQjHNwAiVajPgwOhHbnywFzzvfzODU6y+BVg/o9j1ZYlvkWlzUJyPrCF49jE/GcPS3hC8xNIFNEqPSggREPLyQ==}
+  '@payloadcms/translations@4.0.0-canary.38':
+    resolution: {integrity: sha512-7ao8otvtNFYVr13uZvZqr5LiP7ey4DdczL0ikuPi8LvM3QBo7WklCxgK5YrFt8WSAhwZamDNY1V73DGQmAPWjw==}
 
   '@pinojs/redact@0.4.0':
     resolution: {integrity: sha512-k2ENnmBugE/rzQfEcdWHcCY+/FM3VLzH9cYEsbdsoqrvzAKRhUZeRNhAZvB8OitQJ1TBed3yqWtdjzS6wJKBwg==}
@@ -1598,8 +1598,8 @@ packages:
   dataloader@2.2.3:
     resolution: {integrity: sha512-y2krtASINtPFS1rSDjacrFgn1dcUuoREVabwlOGOe4SdxenREqwjwjElAdwvbGM7kgZz9a3KVicWR7vcz8rnzA==}
 
-  date-fns@4.1.0:
-    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
+  date-fns@4.4.0:
+    resolution: {integrity: sha512-+1UMbeh68lH1SegH83CGWwpb6OHHbpSgr3+s5Eww5M4CAgswBpoWS0AjTOfEJ33HiYKz1hdj/KTFprzXHmq/6w==}
 
   dateformat@4.6.3:
     resolution: {integrity: sha512-2P0p0pFGzHS5EMnhdxQi7aJN+iMheud0UhG4dlE1DLAlvL8JHjJJTX/CSm4JXwV0Ka5nGk3zC5mcb5bUQUxxMA==}
@@ -2161,8 +2161,8 @@ packages:
   path-to-regexp@6.3.0:
     resolution: {integrity: sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ==}
 
-  payload@4.0.0-canary.37:
-    resolution: {integrity: sha512-PF2GFp9NGo0G9Un//BHWYezQwTNw6Dk9A0puEbR/nsQKyU+Fxz0ftAne2LPANAC5Rk5nchspSSObNXPNrtESoQ==}
+  payload@4.0.0-canary.38:
+    resolution: {integrity: sha512-PJMpPqTIsd4DIOyVo3aYVETfvOfsfVd7PfqwJjnbCCqv0Zafzx/H0zACJbhMt1N5CtT5ID4HL6SnNmLWMsgqBQ==}
     engines: {node: '>=24.15.0'}
     hasBin: true
     peerDependencies:
@@ -2496,8 +2496,8 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
-  tsx@4.22.4:
-    resolution: {integrity: sha512-X8EX+XV4QR5xCsrgxaED954zTDfY8KqlDtskKEL0cHhyS/P8b4IFOvGDQpsC9Q1XnLq915wEfwwY/zzskCtmhg==}
+  tsx@4.23.15:
+    resolution: {integrity: sha512-Yiex1Ovn8z2xPpOWckIiysV1SSyRMY9BkLF++q0yKiDxCqRhosKfMg3janKkiLBwZ5c/YryloKwGZcrEmtwxKw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -3025,7 +3025,7 @@ snapshots:
 
   '@neon-rs/load@0.0.4': {}
 
-  '@next/env@16.3.3': {}
+  '@next/env@16.4.0': {}
 
   '@oxc-project/types@0.152.0': {}
 
@@ -3143,11 +3143,11 @@ snapshots:
   '@oxlint/binding-win32-x64-msvc@1.86.0':
     optional: true
 
-  '@payloadcms/db-mongodb@4.0.0-canary.37(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))':
+  '@payloadcms/db-mongodb@4.0.0-canary.38(payload@4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2))':
     dependencies:
       mongoose: 9.9.2
       mongoose-paginate-v2: 1.9.4(mongoose@9.9.2)
-      payload: 4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2)
+      payload: 4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2)
       prompts: 2.4.2
       uuid: 14.0.0
     transitivePeerDependencies:
@@ -3159,14 +3159,14 @@ snapshots:
       - snappy
       - socks
 
-  '@payloadcms/db-postgres@4.0.0-canary.37(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))':
+  '@payloadcms/db-postgres@4.0.0-canary.38(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(payload@4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2))':
     dependencies:
-      '@payloadcms/drizzle': 4.0.0-canary.37(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
+      '@payloadcms/drizzle': 4.0.0-canary.38(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
       '@types/pg': 8.20.0
       console-table-printer: 2.15.0
       drizzle-kit: 0.31.7
       drizzle-orm: 0.45.2(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(@types/pg@8.20.0)(pg@8.20.0)
-      payload: 4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2)
+      payload: 4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2)
       pg: 8.20.0
       prompts: 2.4.2
       to-snake-case: 1.0.0
@@ -3202,14 +3202,14 @@ snapshots:
       - sqlite3
       - supports-color
 
-  '@payloadcms/db-sqlite@4.0.0-canary.37(@electric-sql/pglite@0.5.8)(@types/pg@8.20.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)':
+  '@payloadcms/db-sqlite@4.0.0-canary.38(@electric-sql/pglite@0.5.8)(@types/pg@8.20.0)(payload@4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)':
     dependencies:
       '@libsql/client': 0.14.0
-      '@payloadcms/drizzle': 4.0.0-canary.37(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
+      '@payloadcms/drizzle': 4.0.0-canary.38(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
       console-table-printer: 2.15.0
       drizzle-kit: 0.31.7
       drizzle-orm: 0.45.2(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(@types/pg@8.20.0)(pg@8.20.0)
-      payload: 4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2)
+      payload: 4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2)
       prompts: 2.4.2
       to-snake-case: 1.0.0
       uuid: 14.0.0
@@ -3246,12 +3246,12 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@payloadcms/drizzle@4.0.0-canary.37(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)':
+  '@payloadcms/drizzle@4.0.0-canary.38(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)':
     dependencies:
       console-table-printer: 2.15.0
       dequal: 2.0.3
       drizzle-orm: 0.45.2(@electric-sql/pglite@0.5.8)(@libsql/client@0.14.0)(@types/pg@8.20.0)(pg@8.20.0)
-      payload: 4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2)
+      payload: 4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2)
       prompts: 2.4.2
       to-snake-case: 1.0.0
       uuid: 14.0.0
@@ -3286,9 +3286,9 @@ snapshots:
       - sql.js
       - sqlite3
 
-  '@payloadcms/translations@4.0.0-canary.37':
+  '@payloadcms/translations@4.0.0-canary.38':
     dependencies:
-      date-fns: 4.1.0
+      date-fns: 4.4.0
 
   '@pinojs/redact@0.4.0': {}
 
@@ -3451,14 +3451,14 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  '@vitest/mocker@5.0.3(vite@8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.22.4))':
+  '@vitest/mocker@5.0.3(vite@8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.23.15))':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       '@vitest/spy': 5.0.3
       estree-walker: 3.0.3
       magic-string: 1.4.2
     optionalDependencies:
-      vite: 8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.22.4)
+      vite: 8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.23.15)
 
   '@vitest/spy@5.0.3': {}
 
@@ -3613,7 +3613,7 @@ snapshots:
 
   dataloader@2.2.3: {}
 
-  date-fns@4.1.0: {}
+  date-fns@4.4.0: {}
 
   dateformat@4.6.3: {}
 
@@ -4136,10 +4136,10 @@ snapshots:
 
   path-to-regexp@6.3.0: {}
 
-  payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2):
+  payload@4.0.0-canary.38(graphql@16.14.2)(typescript@7.0.2):
     dependencies:
-      '@next/env': 16.3.3
-      '@payloadcms/translations': 4.0.0-canary.37
+      '@next/env': 16.4.0
+      '@payloadcms/translations': 4.0.0-canary.38
       '@standard-schema/spec': 1.1.0
       '@types/busboy': 1.5.4
       bson-objectid: 2.0.4
@@ -4169,7 +4169,7 @@ snapshots:
       sanitize-filename: 1.6.4
       sax: 1.6.1
       ts-essentials: 10.0.3(typescript@7.0.2)
-      tsx: 4.22.4
+      tsx: 4.23.15
       undici: 7.29.1
       uuid: 14.0.0
       ws: 8.22.0
@@ -4473,7 +4473,7 @@ snapshots:
     optionalDependencies:
       typescript: 7.0.2
 
-  tsdown@0.23.0(tsx@4.22.4)(typescript@7.0.2):
+  tsdown@0.23.0(tsx@4.23.15)(typescript@7.0.2):
     dependencies:
       cac: 7.0.0
       defu: 6.1.7
@@ -4490,7 +4490,7 @@ snapshots:
       unconfig-core: 7.5.0
       verkit: 0.4.1
     optionalDependencies:
-      tsx: 4.22.4
+      tsx: 4.23.15
       typescript: 7.0.2
     transitivePeerDependencies:
       - '@typescript/native-preview'
@@ -4501,7 +4501,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsx@4.22.4:
+  tsx@4.23.15:
     dependencies:
       esbuild: 0.28.2
     optionalDependencies:
@@ -4547,7 +4547,7 @@ snapshots:
 
   verkit@0.4.1: {}
 
-  vite@8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.22.4):
+  vite@8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.23.15):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -4558,12 +4558,12 @@ snapshots:
       '@types/node': 26.6.4
       esbuild: 0.25.12
       fsevents: 2.3.3
-      tsx: 4.22.4
+      tsx: 4.23.15
 
-  vitest@5.0.3(@types/node@26.6.4)(vite@8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.22.4)):
+  vitest@5.0.3(@types/node@26.6.4)(vite@8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.23.15)):
     dependencies:
       '@types/chai': 5.2.3
-      '@vitest/mocker': 5.0.3(vite@8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.22.4))
+      '@vitest/mocker': 5.0.3(vite@8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.23.15))
       chai: 6.3.0
       es-module-lexer: 2.3.2
       expect-type: 1.4.0
@@ -4574,7 +4574,7 @@ snapshots:
       tinybench: 6.2.0
       tinyexec: 1.3.1
       tinyglobby: 0.2.17
-      vite: 8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.22.4)
+      vite: 8.3.2(@types/node@26.6.4)(esbuild@0.25.12)(tsx@4.23.15)
       why-is-node-running: 3.2.1
     optionalDependencies:
       '@types/node': 26.6.4
