@@ -52,8 +52,12 @@ jobs:
           else
             echo "config=node_modules/@seshuk/payload-plugin-tooling/cliff.toml" >> "$GITHUB_OUTPUT"
           fi
-          prev=$(git describe --tags --abbrev=0 --match 'v*.*.*' --exclude 'v*-*' HEAD^ 2>/dev/null || true)
-          if [[ "$GITHUB_REF_NAME" == *-* || -z "$prev" ]]; then
+          if [[ "$GITHUB_REF_NAME" == *-* ]]; then
+            prev=$(git describe --tags --abbrev=0 --match 'v*.*.*' HEAD^ 2>/dev/null || true)
+          else
+            prev=$(git describe --tags --abbrev=0 --match 'v*.*.*' --exclude 'v*-*' HEAD^ 2>/dev/null || true)
+          fi
+          if [ -z "$prev" ]; then
             echo "args=--latest" >> "$GITHUB_OUTPUT"
           else
             echo "args=$prev..$GITHUB_REF_NAME" >> "$GITHUB_OUTPUT"
