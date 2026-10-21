@@ -173,14 +173,14 @@ importers:
         specifier: 0.2.13
         version: 0.2.13(@electric-sql/pglite-age@0.0.11(@electric-sql/pglite@0.5.10))(@electric-sql/pglite-pg_hashids@0.0.11(@electric-sql/pglite@0.5.10))(@electric-sql/pglite-pg_ivm@0.0.11(@electric-sql/pglite@0.5.10))(@electric-sql/pglite-pg_textsearch@0.0.12(@electric-sql/pglite@0.5.10))(@electric-sql/pglite-pg_uuidv7@0.0.11(@electric-sql/pglite@0.5.10))(@electric-sql/pglite-pgtap@0.0.11(@electric-sql/pglite@0.5.10))(@electric-sql/pglite-pgvector@0.0.11(@electric-sql/pglite@0.5.10))(@electric-sql/pglite@0.5.10)
       '@payloadcms/db-mongodb':
-        specifier: 4.0.0-canary.37
-        version: 4.0.0-canary.37(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))
+        specifier: 4.0.0-beta.3
+        version: 4.0.0-beta.3(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))
       '@payloadcms/db-postgres':
-        specifier: 4.0.0-canary.37
-        version: 4.0.0-canary.37(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))
+        specifier: 4.0.0-beta.3
+        version: 4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))
       '@payloadcms/db-sqlite':
-        specifier: 4.0.0-canary.37
-        version: 4.0.0-canary.37(@electric-sql/pglite@0.5.10)(@types/pg@8.20.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
+        specifier: 4.0.0-beta.3
+        version: 4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@types/pg@8.20.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
       '@types/node':
         specifier: ^26.6.4
         version: 26.6.5
@@ -194,8 +194,8 @@ importers:
         specifier: ^1.86.0
         version: 1.88.0
       payload:
-        specifier: 4.0.0-canary.37
-        version: 4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2)
+        specifier: 4.0.0-beta.3
+        version: 4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2)
       tsdown:
         specifier: ^0.23.0
         version: 0.23.1(tsx@4.22.4)(typescript@7.0.2)
@@ -791,8 +791,8 @@ packages:
   '@neon-rs/load@0.0.4':
     resolution: {integrity: sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==}
 
-  '@next/env@16.3.3':
-    resolution: {integrity: sha512-U2eYQRwXj+dsqxV79zFqExDdatnNY/ZWc2nsJU1p/OgT7fd3dXwlF6OjYaFQCfMoeTA19PWq+wVmYgimVA+V+g==}
+  '@next/env@16.4.2':
+    resolution: {integrity: sha512-nTUTFH7G5/J/fmpkjVLegOkqyKOP0CEsJcMsyO4UCYeN1su+YMW/MfaSErnJskL7XM+UDK6aTvslxsRCyya/sA==}
 
   '@oxc-project/types@0.154.0':
     resolution: {integrity: sha512-KYOUGQFlLWR+s4QMV2Q9ko38TZm7EdO87Qm7rvZLqk/webse/cDjtyxKhg/47l0byCbs/k46LT8qc4PKjAikzA==}
@@ -1041,28 +1041,28 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@payloadcms/db-mongodb@4.0.0-canary.37':
-    resolution: {integrity: sha512-kXf6PkoC4lw1ceVlxDKugdM8xjaPQY5lhXJ9IBq7A+TpZYmDafh+OJWEviJqm/+JXKttnvFD0XPrI+fyCX5W4w==}
+  '@payloadcms/db-mongodb@4.0.0-beta.3':
+    resolution: {integrity: sha512-S+0ZODQFgOLSYA0HP1H2brvwRaezyI+6Spi08raajPx2k97m8l16cwjvqeJAYoKwBcgOUfEr32/86k9TbvGOZg==}
     peerDependencies:
-      payload: 4.0.0-canary.37
+      payload: 4.0.0-beta.3
 
-  '@payloadcms/db-postgres@4.0.0-canary.37':
-    resolution: {integrity: sha512-VuIcN8Dwbu8amag+Ees7jPAV59dBMdJBlunHSv3dIcsn12tDyUFTqh1nIJDdsk2FrDxMCO/a6R4nuzSC4oH/Wg==}
+  '@payloadcms/db-postgres@4.0.0-beta.3':
+    resolution: {integrity: sha512-x+DBSMT0MflDg+G85SXV8u3YuzQ1kF//4ozgxAb6OyIOg6ULhYDE9aBVH0nw18Lbf8sdGabvMeB9G35IT4IY1Q==}
     peerDependencies:
-      payload: 4.0.0-canary.37
+      payload: 4.0.0-beta.3
 
-  '@payloadcms/db-sqlite@4.0.0-canary.37':
-    resolution: {integrity: sha512-TFoEiWLHGOpe+e1zCzM8WN6cm/yRrpFBYcZeXiDFUu+MsftmGsFSlv43xZssLzIIyd92VZx3KFc8G9QqGOq+ZA==}
+  '@payloadcms/db-sqlite@4.0.0-beta.3':
+    resolution: {integrity: sha512-oEHAAyyFp6FmIAWa6RYdGRp3yxqWeUUnoMHcHQ01v7VtdGrve3BhnZJQemGScXJI7XZbCXPfPIf14YagJ8ggbw==}
     peerDependencies:
-      payload: 4.0.0-canary.37
+      payload: 4.0.0-beta.3
 
-  '@payloadcms/drizzle@4.0.0-canary.37':
-    resolution: {integrity: sha512-hze+8ppNoINxNbWtXT460CHZwoTVkATqVmy7jzgmZiw0AHBJMIPCeDs3JioV/pgE45niH5nJIpkvCUCM0EjRoA==}
+  '@payloadcms/drizzle@4.0.0-beta.3':
+    resolution: {integrity: sha512-oqp5sgxG+lzenT3EfY+G3Z/RbfM7EbJdfu6Wrq2Q066J+/V5P8RNRFtzIf6jP3bNf6nGjeHD/r8Yf4oFet4D6Q==}
     peerDependencies:
-      payload: 4.0.0-canary.37
+      payload: 4.0.0-beta.3
 
-  '@payloadcms/translations@4.0.0-canary.37':
-    resolution: {integrity: sha512-mQjHNwAiVajPgwOhHbnywFzzvfzODU6y+BVg/o9j1ZYlvkWlzUJyPrCF49jE/GcPS3hC8xNIFNEqPSggREPLyQ==}
+  '@payloadcms/translations@4.0.0-beta.3':
+    resolution: {integrity: sha512-qc4sJ8PmUTaI3L64k4OBP8XhHhyX07FHAgx/5uFyczkoexBCEWwrsw6sIAyjK17KfhPxJvK5aJF+PL32TF3K6w==}
 
   '@pinojs/redact@0.4.0':
     resolution: {integrity: sha512-k2ENnmBugE/rzQfEcdWHcCY+/FM3VLzH9cYEsbdsoqrvzAKRhUZeRNhAZvB8OitQJ1TBed3yqWtdjzS6wJKBwg==}
@@ -1532,8 +1532,8 @@ packages:
   dataloader@2.2.3:
     resolution: {integrity: sha512-y2krtASINtPFS1rSDjacrFgn1dcUuoREVabwlOGOe4SdxenREqwjwjElAdwvbGM7kgZz9a3KVicWR7vcz8rnzA==}
 
-  date-fns@4.1.0:
-    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
+  date-fns@4.4.0:
+    resolution: {integrity: sha512-+1UMbeh68lH1SegH83CGWwpb6OHHbpSgr3+s5Eww5M4CAgswBpoWS0AjTOfEJ33HiYKz1hdj/KTFprzXHmq/6w==}
 
   dateformat@4.6.3:
     resolution: {integrity: sha512-2P0p0pFGzHS5EMnhdxQi7aJN+iMheud0UhG4dlE1DLAlvL8JHjJJTX/CSm4JXwV0Ka5nGk3zC5mcb5bUQUxxMA==}
@@ -1791,10 +1791,6 @@ packages:
   hookable@6.1.2:
     resolution: {integrity: sha512-+abwxtiEA52GCVIsQqut3S/uKTbUwYIp4Pe/vv+6py5XiXBCqMZHg6pA6Y5qhgLSEys0/cYuPbO0z1QFj5ZCmg==}
 
-  http-status@2.1.0:
-    resolution: {integrity: sha512-O5kPr7AW7wYd/BBiOezTwnVAnmSNFY+J7hlZD2X5IOxVBetjcHAiTXhzj0gMrnojQlwy+UT1/Y3H3vJ3UlmvLA==}
-    engines: {node: '>= 0.4.0'}
-
   https-proxy-agent@7.0.6:
     resolution: {integrity: sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==}
     engines: {node: '>= 14'}
@@ -1823,8 +1819,8 @@ packages:
     resolution: {integrity: sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==}
     engines: {node: '>=0.10.0'}
 
-  jose@6.2.3:
-    resolution: {integrity: sha512-YYVDInQKFJfR/xa3ojUTl8c2KoTwiL1R5Wg9YCydwH0x0B9grbzlg5HC7mMjCtUJjbQ/YnGEZIhI5tCgfTb4Hw==}
+  jose@6.2.12:
+    resolution: {integrity: sha512-9NiFmJEex0sy2Dk58j2UGBSHgUs2ypF9eZSu4L6vjOX3Dp96Sw1F3uL+H+D1sx02jZZdzUT0HgvCy59CuvXcWw==}
 
   joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
@@ -2094,8 +2090,8 @@ packages:
   path-to-regexp@6.3.0:
     resolution: {integrity: sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ==}
 
-  payload@4.0.0-canary.37:
-    resolution: {integrity: sha512-PF2GFp9NGo0G9Un//BHWYezQwTNw6Dk9A0puEbR/nsQKyU+Fxz0ftAne2LPANAC5Rk5nchspSSObNXPNrtESoQ==}
+  payload@4.0.0-beta.3:
+    resolution: {integrity: sha512-Bsz4tIyvDMUk+FXFEBw1j8Vg+v8dK+yr2V72OKuWjvZjooFJYLqbOU+zMMGGlj1yD6iAPVbV68jGUrXJr+wIwg==}
     engines: {node: '>=24.15.0'}
     hasBin: true
     peerDependencies:
@@ -2431,6 +2427,11 @@ packages:
 
   tsx@4.22.4:
     resolution: {integrity: sha512-X8EX+XV4QR5xCsrgxaED954zTDfY8KqlDtskKEL0cHhyS/P8b4IFOvGDQpsC9Q1XnLq915wEfwwY/zzskCtmhg==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+
+  tsx@4.23.15:
+    resolution: {integrity: sha512-Yiex1Ovn8z2xPpOWckIiysV1SSyRMY9BkLF++q0yKiDxCqRhosKfMg3janKkiLBwZ5c/YryloKwGZcrEmtwxKw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -2965,7 +2966,7 @@ snapshots:
 
   '@neon-rs/load@0.0.4': {}
 
-  '@next/env@16.3.3': {}
+  '@next/env@16.4.2': {}
 
   '@oxc-project/types@0.154.0': {}
 
@@ -3083,11 +3084,11 @@ snapshots:
   '@oxlint/binding-win32-x64-msvc@1.88.0':
     optional: true
 
-  '@payloadcms/db-mongodb@4.0.0-canary.37(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))':
+  '@payloadcms/db-mongodb@4.0.0-beta.3(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))':
     dependencies:
       mongoose: 9.9.2
       mongoose-paginate-v2: 1.9.4(mongoose@9.9.2)
-      payload: 4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2)
+      payload: 4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2)
       prompts: 2.4.2
       uuid: 14.0.0
     transitivePeerDependencies:
@@ -3099,14 +3100,14 @@ snapshots:
       - snappy
       - socks
 
-  '@payloadcms/db-postgres@4.0.0-canary.37(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))':
+  '@payloadcms/db-postgres@4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))':
     dependencies:
-      '@payloadcms/drizzle': 4.0.0-canary.37(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
+      '@payloadcms/drizzle': 4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
       '@types/pg': 8.20.0
       console-table-printer: 2.15.0
       drizzle-kit: 0.31.7
       drizzle-orm: 0.45.2(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(pg@8.20.0)
-      payload: 4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2)
+      payload: 4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2)
       pg: 8.20.0
       prompts: 2.4.2
       to-snake-case: 1.0.0
@@ -3142,14 +3143,14 @@ snapshots:
       - sqlite3
       - supports-color
 
-  '@payloadcms/db-sqlite@4.0.0-canary.37(@electric-sql/pglite@0.5.10)(@types/pg@8.20.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)':
+  '@payloadcms/db-sqlite@4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@types/pg@8.20.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)':
     dependencies:
       '@libsql/client': 0.14.0
-      '@payloadcms/drizzle': 4.0.0-canary.37(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
+      '@payloadcms/drizzle': 4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
       console-table-printer: 2.15.0
       drizzle-kit: 0.31.7
       drizzle-orm: 0.45.2(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(pg@8.20.0)
-      payload: 4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2)
+      payload: 4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2)
       prompts: 2.4.2
       to-snake-case: 1.0.0
       uuid: 14.0.0
@@ -3186,12 +3187,12 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@payloadcms/drizzle@4.0.0-canary.37(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)':
+  '@payloadcms/drizzle@4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)':
     dependencies:
       console-table-printer: 2.15.0
       dequal: 2.0.3
       drizzle-orm: 0.45.2(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(pg@8.20.0)
-      payload: 4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2)
+      payload: 4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2)
       prompts: 2.4.2
       to-snake-case: 1.0.0
       uuid: 14.0.0
@@ -3226,9 +3227,9 @@ snapshots:
       - sql.js
       - sqlite3
 
-  '@payloadcms/translations@4.0.0-canary.37':
+  '@payloadcms/translations@4.0.0-beta.3':
     dependencies:
-      date-fns: 4.1.0
+      date-fns: 4.4.0
 
   '@pinojs/redact@0.4.0': {}
 
@@ -3517,7 +3518,7 @@ snapshots:
 
   dataloader@2.2.3: {}
 
-  date-fns@4.1.0: {}
+  date-fns@4.4.0: {}
 
   dateformat@4.6.3: {}
 
@@ -3733,8 +3734,6 @@ snapshots:
 
   hookable@6.1.2: {}
 
-  http-status@2.1.0: {}
-
   https-proxy-agent@7.0.6:
     dependencies:
       agent-base: 7.1.4
@@ -3756,7 +3755,7 @@ snapshots:
     dependencies:
       is-extglob: 2.1.1
 
-  jose@6.2.3: {}
+  jose@6.2.12: {}
 
   joycon@3.1.1: {}
 
@@ -4038,10 +4037,10 @@ snapshots:
 
   path-to-regexp@6.3.0: {}
 
-  payload@4.0.0-canary.37(graphql@16.14.2)(typescript@7.0.2):
+  payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2):
     dependencies:
-      '@next/env': 16.3.3
-      '@payloadcms/translations': 4.0.0-canary.37
+      '@next/env': 16.4.2
+      '@payloadcms/translations': 4.0.0-beta.3
       '@standard-schema/spec': 1.1.0
       '@types/busboy': 1.5.4
       bson-objectid: 2.0.4
@@ -4057,10 +4056,9 @@ snapshots:
       file-type: 22.0.1
       get-tsconfig: 4.14.0
       graphql: 16.14.2
-      http-status: 2.1.0
       image-dimensions: 2.5.1
       ipaddr.js: 2.3.0
-      jose: 6.2.3
+      jose: 6.2.12
       json-schema-to-typescript: 15.0.3
       path-to-regexp: 6.3.0
       pino: 10.3.1
@@ -4071,7 +4069,7 @@ snapshots:
       sanitize-filename: 1.6.4
       sax: 1.6.1
       ts-essentials: 10.0.3(typescript@7.0.2)
-      tsx: 4.22.4
+      tsx: 4.23.15
       undici: 7.29.1
       uuid: 14.0.0
       ws: 8.22.0
@@ -4404,6 +4402,13 @@ snapshots:
   tslib@2.8.1: {}
 
   tsx@4.22.4:
+    dependencies:
+      esbuild: 0.28.2
+    optionalDependencies:
+      fsevents: 2.3.3
+    optional: true
+
+  tsx@4.23.15:
     dependencies:
       esbuild: 0.28.2
     optionalDependencies:
