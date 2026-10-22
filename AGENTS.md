@@ -4,7 +4,7 @@ Shared dev config for `@seshuk` Payload 4 plugins: storage-bunny, media-preview,
 
 ## Environment
 
-- pnpm 12. Node.js 24.15+. Payload 4.
+- pnpm 12. Node.js 24.22.1+. Payload 4.
 
 ## Commands
 

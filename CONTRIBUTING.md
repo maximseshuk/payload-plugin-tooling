@@ -10,7 +10,7 @@ Thanks for helping with the shared tooling for the @maximseshuk Payload plugins.
 
 ## Setup
 
-You need Node.js 24.15+ and pnpm 12.
+You need Node.js 24.22.1+ and pnpm 12.
 
 ```bash
 pnpm install

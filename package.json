@@ -81,14 +81,14 @@
   "devDependencies": {
     "@electric-sql/pglite": "0.5.10",
     "@electric-sql/pglite-socket": "0.2.13",
-    "@payloadcms/db-mongodb": "4.0.0-beta.3",
-    "@payloadcms/db-postgres": "4.0.0-beta.3",
-    "@payloadcms/db-sqlite": "4.0.0-beta.3",
+    "@payloadcms/db-mongodb": "4.0.0-beta.4",
+    "@payloadcms/db-postgres": "4.0.0-beta.4",
+    "@payloadcms/db-sqlite": "4.0.0-beta.4",
     "@types/node": "^26.6.4",
     "mongodb-memory-server": "^11.3.0",
     "oxfmt": "^0.73.0",
     "oxlint": "^1.86.0",
-    "payload": "4.0.0-beta.3",
+    "payload": "4.0.0-beta.4",
     "tsdown": "^0.23.0",
     "typescript": "7.0.2",
     "vitest": "^5.0.3"
@@ -96,13 +96,13 @@
   "peerDependencies": {
     "@electric-sql/pglite": ">=0.5.0",
     "@electric-sql/pglite-socket": ">=0.2.0",
-    "@payloadcms/db-mongodb": ">=4.0.0-0",
-    "@payloadcms/db-postgres": ">=4.0.0-0",
-    "@payloadcms/db-sqlite": ">=4.0.0-0",
+    "@payloadcms/db-mongodb": ">=4.0.0-beta.0 <4.0.0-canary.0 || >=4.0.0",
+    "@payloadcms/db-postgres": ">=4.0.0-beta.0 <4.0.0-canary.0 || >=4.0.0",
+    "@payloadcms/db-sqlite": ">=4.0.0-beta.0 <4.0.0-canary.0 || >=4.0.0",
     "mongodb-memory-server": ">=10.0.0",
     "oxfmt": ">=0.71.0",
     "oxlint": ">=1.77.0",
-    "payload": ">=4.0.0-0",
+    "payload": ">=4.0.0-beta.0 <4.0.0-canary.0 || >=4.0.0",
     "tsdown": ">=0.23.0",
     "vitest": ">=4.0.0"
   },
@@ -149,11 +149,11 @@
     },
     "runtime": {
       "name": "node",
-      "version": ">=24.15.0",
+      "version": ">=24.22.1",
       "onFail": "warn"
     }
   },
   "engines": {
-    "node": ">=24.15.0"
+    "node": ">=24.22.1"
   }
 }

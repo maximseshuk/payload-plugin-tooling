@@ -173,14 +173,14 @@ importers:
         specifier: 0.2.13
         version: 0.2.13(@electric-sql/pglite-age@0.0.11(@electric-sql/pglite@0.5.10))(@electric-sql/pglite-pg_hashids@0.0.11(@electric-sql/pglite@0.5.10))(@electric-sql/pglite-pg_ivm@0.0.11(@electric-sql/pglite@0.5.10))(@electric-sql/pglite-pg_textsearch@0.0.12(@electric-sql/pglite@0.5.10))(@electric-sql/pglite-pg_uuidv7@0.0.11(@electric-sql/pglite@0.5.10))(@electric-sql/pglite-pgtap@0.0.11(@electric-sql/pglite@0.5.10))(@electric-sql/pglite-pgvector@0.0.11(@electric-sql/pglite@0.5.10))(@electric-sql/pglite@0.5.10)
       '@payloadcms/db-mongodb':
-        specifier: 4.0.0-beta.3
-        version: 4.0.0-beta.3(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))
+        specifier: 4.0.0-beta.4
+        version: 4.0.0-beta.4(payload@4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2))
       '@payloadcms/db-postgres':
-        specifier: 4.0.0-beta.3
-        version: 4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))
+        specifier: 4.0.0-beta.4
+        version: 4.0.0-beta.4(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(payload@4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2))
       '@payloadcms/db-sqlite':
-        specifier: 4.0.0-beta.3
-        version: 4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@types/pg@8.20.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
+        specifier: 4.0.0-beta.4
+        version: 4.0.0-beta.4(@electric-sql/pglite@0.5.10)(@types/pg@8.20.0)(payload@4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
       '@types/node':
         specifier: ^26.6.4
         version: 26.6.5
@@ -194,8 +194,8 @@ importers:
         specifier: ^1.86.0
         version: 1.88.0
       payload:
-        specifier: 4.0.0-beta.3
-        version: 4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2)
+        specifier: 4.0.0-beta.4
+        version: 4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2)
       tsdown:
         specifier: ^0.23.0
         version: 0.23.1(tsx@4.22.4)(typescript@7.0.2)
@@ -1041,28 +1041,28 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@payloadcms/db-mongodb@4.0.0-beta.3':
-    resolution: {integrity: sha512-S+0ZODQFgOLSYA0HP1H2brvwRaezyI+6Spi08raajPx2k97m8l16cwjvqeJAYoKwBcgOUfEr32/86k9TbvGOZg==}
+  '@payloadcms/db-mongodb@4.0.0-beta.4':
+    resolution: {integrity: sha512-O8eWqTOVpTLHg52hO0PjUFnqgr43XLt0DM4021h/ni5HHZ0g9772bAOEZEJUxStkEz0D7gPodq5f4oG7gaG5ZA==}
     peerDependencies:
-      payload: 4.0.0-beta.3
+      payload: 4.0.0-beta.4
 
-  '@payloadcms/db-postgres@4.0.0-beta.3':
-    resolution: {integrity: sha512-x+DBSMT0MflDg+G85SXV8u3YuzQ1kF//4ozgxAb6OyIOg6ULhYDE9aBVH0nw18Lbf8sdGabvMeB9G35IT4IY1Q==}
+  '@payloadcms/db-postgres@4.0.0-beta.4':
+    resolution: {integrity: sha512-ybjhTV8elg4932ezBRMJhfK6vjWzb3T8P3iinZ2vMyrBrKIxj02V9A1TFA2u7yKtKp7BDoaO9oq0gzHdjmO2lg==}
     peerDependencies:
-      payload: 4.0.0-beta.3
+      payload: 4.0.0-beta.4
 
-  '@payloadcms/db-sqlite@4.0.0-beta.3':
-    resolution: {integrity: sha512-oEHAAyyFp6FmIAWa6RYdGRp3yxqWeUUnoMHcHQ01v7VtdGrve3BhnZJQemGScXJI7XZbCXPfPIf14YagJ8ggbw==}
+  '@payloadcms/db-sqlite@4.0.0-beta.4':
+    resolution: {integrity: sha512-wBYg3izzaG8AmIquo3yX0tGJgrLQNmkC/YMPHAZa2mPzVGnjnuc2b+8sHhXJm02MKf7LHd/d3pIuDYYoLfL8Ig==}
     peerDependencies:
-      payload: 4.0.0-beta.3
+      payload: 4.0.0-beta.4
 
-  '@payloadcms/drizzle@4.0.0-beta.3':
-    resolution: {integrity: sha512-oqp5sgxG+lzenT3EfY+G3Z/RbfM7EbJdfu6Wrq2Q066J+/V5P8RNRFtzIf6jP3bNf6nGjeHD/r8Yf4oFet4D6Q==}
+  '@payloadcms/drizzle@4.0.0-beta.4':
+    resolution: {integrity: sha512-1UxpG+3vEAbZ4CXCQ+cOxXKUT8c4gT6fjnAKhQWt6ZltZn8SnYedLpYiVyZYCltkOkLX8THX6DTV3k7utsynCQ==}
     peerDependencies:
-      payload: 4.0.0-beta.3
+      payload: 4.0.0-beta.4
 
-  '@payloadcms/translations@4.0.0-beta.3':
-    resolution: {integrity: sha512-qc4sJ8PmUTaI3L64k4OBP8XhHhyX07FHAgx/5uFyczkoexBCEWwrsw6sIAyjK17KfhPxJvK5aJF+PL32TF3K6w==}
+  '@payloadcms/translations@4.0.0-beta.4':
+    resolution: {integrity: sha512-cGdzSMUFOjVxnlyFXe3ty01b0/ZOdxOYdWQRAa/FkeV6a/Iw1GyuEN0Vx5TYQGHhL3yVM2fg+EK2KxVqYsgzUA==}
 
   '@pinojs/redact@0.4.0':
     resolution: {integrity: sha512-k2ENnmBugE/rzQfEcdWHcCY+/FM3VLzH9cYEsbdsoqrvzAKRhUZeRNhAZvB8OitQJ1TBed3yqWtdjzS6wJKBwg==}
@@ -2090,9 +2090,9 @@ packages:
   path-to-regexp@6.3.0:
     resolution: {integrity: sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ==}
 
-  payload@4.0.0-beta.3:
-    resolution: {integrity: sha512-Bsz4tIyvDMUk+FXFEBw1j8Vg+v8dK+yr2V72OKuWjvZjooFJYLqbOU+zMMGGlj1yD6iAPVbV68jGUrXJr+wIwg==}
-    engines: {node: '>=24.15.0'}
+  payload@4.0.0-beta.4:
+    resolution: {integrity: sha512-dBQY7gAQsQWMLnh3HabHkTHb+8KFn1LcQJh+mLUQfNcbWUU6NDl77Q8U/sNz05QmUBwkEhkLvc7MgnFKkWK5Ow==}
+    engines: {node: '>=24.22.1'}
     hasBin: true
     peerDependencies:
       graphql: ^16.8.1
@@ -2450,8 +2450,8 @@ packages:
   undici-types@8.9.0:
     resolution: {integrity: sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==}
 
-  undici@7.29.1:
-    resolution: {integrity: sha512-RYONW2MeafgYlkVOKYKkA/Ag7BmXqgIWCa8t1m0JcxrQg9pI9lEqRhAOruOBCbAohOa/gkCF+iPi9hrgvTzu6Q==}
+  undici@7.30.1:
+    resolution: {integrity: sha512-03KrMbjIFDWQR5RNPrSw3bd1r12JpyFQl9/yxjUbJtqkjmllqC5lFjZh6ujeuJCKr8EOQvRW872Oy/az+nLYxg==}
     engines: {node: '>=20.18.1'}
 
   utf8-byte-length@1.0.5:
@@ -3084,11 +3084,11 @@ snapshots:
   '@oxlint/binding-win32-x64-msvc@1.88.0':
     optional: true
 
-  '@payloadcms/db-mongodb@4.0.0-beta.3(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))':
+  '@payloadcms/db-mongodb@4.0.0-beta.4(payload@4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2))':
     dependencies:
       mongoose: 9.9.2
       mongoose-paginate-v2: 1.9.4(mongoose@9.9.2)
-      payload: 4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2)
+      payload: 4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2)
       prompts: 2.4.2
       uuid: 14.0.0
     transitivePeerDependencies:
@@ -3100,14 +3100,14 @@ snapshots:
       - snappy
       - socks
 
-  '@payloadcms/db-postgres@4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))':
+  '@payloadcms/db-postgres@4.0.0-beta.4(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(payload@4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2))':
     dependencies:
-      '@payloadcms/drizzle': 4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
+      '@payloadcms/drizzle': 4.0.0-beta.4(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
       '@types/pg': 8.20.0
       console-table-printer: 2.15.0
       drizzle-kit: 0.31.7
       drizzle-orm: 0.45.2(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(pg@8.20.0)
-      payload: 4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2)
+      payload: 4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2)
       pg: 8.20.0
       prompts: 2.4.2
       to-snake-case: 1.0.0
@@ -3143,14 +3143,14 @@ snapshots:
       - sqlite3
       - supports-color
 
-  '@payloadcms/db-sqlite@4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@types/pg@8.20.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)':
+  '@payloadcms/db-sqlite@4.0.0-beta.4(@electric-sql/pglite@0.5.10)(@types/pg@8.20.0)(payload@4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)':
     dependencies:
       '@libsql/client': 0.14.0
-      '@payloadcms/drizzle': 4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
+      '@payloadcms/drizzle': 4.0.0-beta.4(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)
       console-table-printer: 2.15.0
       drizzle-kit: 0.31.7
       drizzle-orm: 0.45.2(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(pg@8.20.0)
-      payload: 4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2)
+      payload: 4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2)
       prompts: 2.4.2
       to-snake-case: 1.0.0
       uuid: 14.0.0
@@ -3187,12 +3187,12 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@payloadcms/drizzle@4.0.0-beta.3(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)':
+  '@payloadcms/drizzle@4.0.0-beta.4(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(payload@4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2))(pg@8.20.0)':
     dependencies:
       console-table-printer: 2.15.0
       dequal: 2.0.3
       drizzle-orm: 0.45.2(@electric-sql/pglite@0.5.10)(@libsql/client@0.14.0)(@types/pg@8.20.0)(pg@8.20.0)
-      payload: 4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2)
+      payload: 4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2)
       prompts: 2.4.2
       to-snake-case: 1.0.0
       uuid: 14.0.0
@@ -3227,7 +3227,7 @@ snapshots:
       - sql.js
       - sqlite3
 
-  '@payloadcms/translations@4.0.0-beta.3':
+  '@payloadcms/translations@4.0.0-beta.4':
     dependencies:
       date-fns: 4.4.0
 
@@ -4037,10 +4037,10 @@ snapshots:
 
   path-to-regexp@6.3.0: {}
 
-  payload@4.0.0-beta.3(graphql@16.14.2)(typescript@7.0.2):
+  payload@4.0.0-beta.4(graphql@16.14.2)(typescript@7.0.2):
     dependencies:
       '@next/env': 16.4.2
-      '@payloadcms/translations': 4.0.0-beta.3
+      '@payloadcms/translations': 4.0.0-beta.4
       '@standard-schema/spec': 1.1.0
       '@types/busboy': 1.5.4
       bson-objectid: 2.0.4
@@ -4070,7 +4070,7 @@ snapshots:
       sax: 1.6.1
       ts-essentials: 10.0.3(typescript@7.0.2)
       tsx: 4.23.15
-      undici: 7.29.1
+      undici: 7.30.1
       uuid: 14.0.0
       ws: 8.22.0
       zod: 4.6.5
@@ -4446,7 +4446,7 @@ snapshots:
 
   undici-types@8.9.0: {}
 
-  undici@7.29.1: {}
+  undici@7.30.1: {}
 
   utf8-byte-length@1.0.5: {}
 
