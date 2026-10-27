@@ -1,6 +1,35 @@
 import type { OxlintConfig } from 'oxlint'
 
-export const oxlintBase = {
+export const oxlintBase: {
+  categories: {
+    correctness: 'error'
+    suspicious: 'warn'
+  }
+  env: {
+    browser: true
+    es2024: true
+    node: true
+  }
+  ignorePatterns: string[]
+  plugins: ('eslint' | 'import' | 'jsx-a11y' | 'oxc' | 'promise' | 'react' | 'typescript' | 'unicorn')[]
+  rules: {
+    'import/no-unassigned-import': 'off'
+    'no-console': 'warn'
+    'no-underscore-dangle': 'off'
+    'react/react-in-jsx-scope': 'off'
+    'unicorn/no-useless-fallback-in-spread': 'off'
+  }
+  overrides: {
+    files: string[]
+    plugins: 'vitest'[]
+    rules: {
+      'no-console': 'off'
+      'unicorn/consistent-function-scoping': 'off'
+      'vitest/no-conditional-expect': 'off'
+      'vitest/require-mock-type-parameters': 'off'
+    }
+  }[]
+} = {
   categories: {
     correctness: 'error',
     suspicious: 'warn',

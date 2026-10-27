@@ -1,6 +1,20 @@
 import type { OxfmtConfig } from 'oxfmt'
 
-export const oxfmtBase = {
+export const oxfmtBase: {
+  arrowParens: 'always'
+  printWidth: number
+  semi: false
+  singleQuote: true
+  sortImports: {
+    groups: (string | string[])[]
+    newlinesBetween: true
+  }
+  sortPackageJson: {
+    sortScripts: true
+  }
+  trailingComma: 'all'
+  ignorePatterns: string[]
+} = {
   arrowParens: 'always',
   printWidth: 120,
   semi: false,
