@@ -9,5 +9,6 @@ export default defineConfig({
   outDir: 'dist',
   platform: 'node',
   target: 'node24',
+  tsconfig: 'tsconfig.build.json',
   unbundle: true,
 })
