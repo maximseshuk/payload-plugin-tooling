@@ -81,14 +81,14 @@
   "devDependencies": {
     "@electric-sql/pglite": "0.5.11",
     "@electric-sql/pglite-socket": "0.2.14",
-    "@payloadcms/db-mongodb": "4.0.0-beta.4",
-    "@payloadcms/db-postgres": "4.0.0-beta.4",
-    "@payloadcms/db-sqlite": "4.0.0-beta.4",
+    "@payloadcms/db-mongodb": "4.0.0-beta.5",
+    "@payloadcms/db-postgres": "4.0.0-beta.5",
+    "@payloadcms/db-sqlite": "4.0.0-beta.5",
     "@types/node": "^26.6.4",
     "mongodb-memory-server": "^11.3.0",
     "oxfmt": "^0.74.0",
     "oxlint": "^1.86.0",
-    "payload": "4.0.0-beta.4",
+    "payload": "4.0.0-beta.5",
     "tsdown": "^0.23.0",
     "typescript": "7.0.2",
     "vitest": "^5.0.3"
